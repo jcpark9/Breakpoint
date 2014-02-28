@@ -1,0 +1,102 @@
+#jumbo {
+	width: 100%;
+}
+
+#logo {
+	width: 95%;
+	margin-bottom: 10px;
+	position: absolute;
+	top: 50px;
+	left: 2.5%;
+	z-index: 10000;
+}
+
+.container {
+	margin-top: 15%;
+	width: 100%;
+	background-color: none;
+	text-align: center;
+}
+
+
+h4 {
+	text-shadow: 1px 1px 1px #ffffff;
+}
+
+.menu-button {
+	margin: 0px auto;
+	width: 70%;
+	height: 55px;
+	margin-bottom: 20px;
+	border-radius: 60px;
+	text-indent:0;
+	border:1px solid;
+	font-family: "Roboto";
+	text-decoration:none;
+	text-align:center;
+	font-size: 18pt;
+	border: 1px solid #505050;
+	font-weight: 200;
+	color: white;
+	box-shadow: 1px 1px 1px #505050;
+}
+
+.menu-text {
+	height: 55px;
+	line-height: 50px;
+	float: right;
+	text-align: left;
+	width: 70%;
+}
+
+.glyphicon {
+	line-height: 50px;
+	height: 65px;
+}
+
+
+#button3:hover {
+	background-color: #cc0033;
+}
+
+#button3 .glyphicon {
+	color: #cc0033;
+}
+
+#button2:hover {
+	background-color: #cc3366;
+}
+
+
+#button2 .glyphicon {
+	color: #cc3366;
+}
+
+#button1:hover {
+	background-color: #993366;
+}
+
+
+#button1 .glyphicon {
+	color: #993366;
+}
+
+
+.menu-button:hover {
+	position:relative;
+	top:3px;
+	border: none;
+	color: white;
+	font-weight: 300;
+}
+
+#button1:hover .glyphicon, #button1.hover .glyphicon {
+	color: white;
+
+}
+#button2:hover .glyphicon, #button1.hover .glyphicon {
+	color: white;
+}
+#button3:hover .glyphicon, #button1.hover .glyphicon {
+	color: white;
+}

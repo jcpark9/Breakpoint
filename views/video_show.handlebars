@@ -1,0 +1,121 @@
+<body id="container">
+
+<div id="landscape-view">
+
+
+    {{!-- {{> menubar}} --}}
+    <!-- All the html and stuff goes here -->
+    
+
+
+<!--  <script type="text/javascript" src="/js/swfobject.js"></script>    
+  <div id="ytapiplayer">
+    You need Flash player 8+ and JavaScript enabled to view this video.
+  </div>
+
+  <script type="text/javascript">
+
+    var params = { allowScriptAccess: "always" };
+    var atts = { id: "myytplayer" };
+    swfobject.embedSWF("http://www.youtube.com/v/moSFlvxnbgk?enablejsapi=1&playerapiid=ytplayer&version=3",
+                       "ytapiplayer", "425", "356", "8", null, null, params, atts);
+  </script> -->
+
+
+<!-- http://stackoverflow.com/questions/19603618/how-do-i-get-the-reference-to-an-existing-youtube-player
+
+http://stackoverflow.com/questions/7443578/youtube-iframe-api-how-do-i-control-a-iframe-player-thats-already-in-the-html?rq=1
+
+http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javascript-or-jquery/7988536#7988536 -->
+
+    <!-- <div class="smartphone-landscape" id=""> -->
+    <!-- <div class="" id="" >  -->
+
+    <div class="" id="player" ng-controller="BreakPointCtrl" >
+        <div class="player-main">
+            <div class="player-video-id" data-video-id="{{ytid}}"></div>
+            <div class="iframe-wrapper">
+                {{#if ytid}}
+                    <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" id="iframePlayer">  </iframe> 
+                {{else}}
+                     <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
+                {{/if}}
+            </div>
+            <div class="player-controls">
+                <div class="slider-breakpoints" ng-model='breakpoints'>
+                    <span class="slider-breakpoint" data-bp-id="\{{sbp.breakPointId}}" ng-repeat="sbp in breakpoints" style="left:\{{sliderBreakpointLeft(sbp)}}%" ng-click="clickedSliderBreakpoint(sbp)" ng-mouseenter="addSegmentDisplayBreakpoint(sbp)" ng-mouseleave="removeSegmentDisplayBreakpoint(sbp)">
+                        <i class='fa fa-tint fa-flip-vertical slider-breakpoint-icon' ng-class="{active: isCurrentBreakpoint(sbp)}"></i>
+                    </span>
+                </div>
+                <div class="main-slider" ng-click="clickedSlider($event)">
+                    <div class="filled-slider"></div>
+                    <div class="current-breakpoint-slider" ng-repeat="bp in getSegmentDisplayBreakpoints()" style="left:\{{sliderSegmentLeft(bp)}}%; width:\{{sliderSegmentWidth(bp)}}%" ng-click="clickedOnCurrentSlider($event)"></div>
+                </div>
+                <div class="control-buttons">
+                    {{> video_controls}}
+                </div>
+            </div>
+        </div>
+        <div class="player-sidenav">
+            {{> playmenu}}
+                <div class="player-menu" >
+                    MENU
+                </div>
+            <div class="player-breakpoints" id="player-breakpoints"> 
+                <ul class='breakpoints-ul'>
+                    <li class="breakpoint-li">
+                        <span href="" ng-show="breakpoints.length == 0"onclick="return false;" class=" breakpoint-empty">
+                            No breakpoints set
+                        </span>
+
+                    </li>
+                    <li class="breakpoint-li" ng-repeat="bp in breakpoints">
+                        <a class="breakpoint" href=
+                        "" data-bp-id="\{{bp.breakPointId}}" ng-click="clickedBreakpoint(bp)" ng-class="{active: isCurrentBreakpoint(bp)}" ng-mouseenter="addSegmentDisplayBreakpoint(bp)" ng-mouseleave="removeSegmentDisplayBreakpoint(bp)">
+                            <div class="breakpoint-time">
+                                \{{bp.displayStartTime()}} - \{{bp.displayEndTime()}}
+                            </div>
+                            <div class="breakpoint-name" contenteditable='true' ng-keydown="blurOnEnter($event)" ng-blur="breakpointNameUpdate($event, bp);" ng-dblclick>
+                                \{{bp.desc}}
+                            </div>
+                        </a>
+                        <i class='fa fa-times breakpoint-remove' ng-click="clickedRemoveBreakpoint(bp)"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{!-- <button class="debug-button" ng-click="logBreakPoints()" >CLICK ME</button> --}}
+    </div>
+</div>
+    
+<div id='portrait-warning'><div id='warning-message'>Please turn your device sideways for best viewing experience</div><img id='warning-logo' src='/images/diamond.png'></img></div>
+
+    <script>
+    // Breakpoint data!
+    {{#if video.breakpoints}}
+        var breakpointData = {{{json video.breakpoints}}};
+    {{else}}
+        var breakpointData =[];
+    {{/if}}
+    {{#if video}}
+        var videoDBID = "{{{video._id}}}";
+        var videoDB = {{{json video}}};
+    {{else}}
+        var videoDBID = undefined;
+        var videoDB = undefined;
+    {{/if}}
+
+    </script>
+
+
+         
+    <!-- Put your scripts after here -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script src="/js/jsclass_core.js"></script>
+    <script src="/js/breakpoint_classes.js"></script>
+    <script src="/js/video_show.js"></script>
+    <script src="/js/playmenu.js"></script>
+
+</body>

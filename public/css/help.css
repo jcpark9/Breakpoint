@@ -1,0 +1,48 @@
+.help {
+    margin-top: 80px;
+}
+
+.Lilcontainer {
+     width: 20%;
+     margin-top: 60px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 10px;
+}
+
+#greenCircle{
+    width:150px;
+    height:150px;
+    border-radius: 100%;
+    text-align:center;
+    background-color: #303030;
+}
+
+.circleContainerContainer {
+    position:relative;
+    top:0;
+}
+
+.greenCircleContainer{
+    position:relative;
+    width:30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom:60px;
+    z-index:2;
+}
+
+.circleContainer{
+    position:absolute;
+    top:0;
+    width:30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom:10px;
+    z-index:1;
+}
+
+.helpContainer {
+    width:80%;
+    margin-left: 10%;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Breakpoint</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href="/css/application.css" rel="stylesheet">
+	<link href="/css/addtosetlist.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="row menubar">
+		<a href="/setlist/{{setlistId}}" id="back"><div class="col-xs-2"><span class="helper"></span><span class="glyphicon glyphicon-chevron-left"></span></div></a>
+		<a href="/"><div class="col-xs-8"><span class="helper"></span><img src="/images/logowhite.png"/></div></a>
+		<div class="col-xs-2"></div>
+	</div>
+	<div class="row searchbar">
+		<form action="/search" method="get">
+		<div class="col-xs-10"><span class="helper"></span><input type="text" id="query" value="Search videos to add..."></div>
+		<div class="col-xs-2"><span class="helper"></span><span id="submit" class="glyphicon glyphicon-search"></div>
+		</form>
+	</div>
+	
+	<a name="top"></a>
+	<div id="add"> <span class="glyphicon glyphicon glyphicon-plus-sign"></span> ADD</div>
+
+	<div class="container">
+		<div class="pagetitle">ADD TO <br/> <span class="setlisttitle"> {{title}} </span></div>
+		<div class="guide" id="instruction"> Check videos to add <br/></div>
+		
+		{{#each videos}}
+			<div class="videoitem" id="video_{{_id}}">
+				<div class="block"><input type="checkbox" value="{{_id}}"><div class="folded title">{{title}}</div></div>
+				<div class="list">
+					<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover">
+					</div>
+					<div class="description"> {{description}} </div>
+				</div>
+			</div>
+		{{/each}}
+
+		<div id='novidfound' class='guide'>No video found</div>
+		<div id="backToFullList" onclick="toDefaultView(event)"><span class="glyphicon glyphicon-arrow-left"></span> BACK TO FULL LIST</div>
+	</div>
+
+	{{>warning}}
+	{{>notification}}
+	<a href="#top"><div id="gobacktop"> GO BACK TO TOP <span class="glyphicon glyphicon-arrow-up"></span></div></a>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/addtosetlist.js"></script>
+</body>
+</html>

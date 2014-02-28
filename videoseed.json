@@ -1,0 +1,128 @@
+ [
+	{
+		"title": "How to Dougie",
+		"description": "Learn some moves inspired by Zendaya's 'Replay' Music Video Dance on Clevver Breakdown!",
+		"duration": "07:56",
+        "breakpoints": [
+            {
+                "name": "A",
+                "start": "93",
+                "end": "116",
+                "speed":"1.0",
+                "repeat":"True",
+                "pid": "3bfa81198cf5fc1002a42b91"
+            }
+        ],
+        "youtubeid": "9PYYaMJ6SfU",
+        "keyword": ["dougie", "Zendaya", "Replay", "dance", "clevver", "breakdown"],
+        "lastWatched": "1392279621",
+        "created": "1392279621",
+        "_id": "4bfa81198cf5fc1002a42b91",
+		"imageURL": "http://c85c7a.medialib.glogster.com/media/9e/9e681903b694c4ba6ce0feb2d8e390d7e680230c0cc677da7cc0226cfbd9501f/dougie-jpg.jpg"			
+	},
+	{
+		"title": "D Low Shuffle Dance Tutorial",
+		"description": "Here is a step-by-step breakdown for the dance to 'The D Low Shuffle.'",
+		"duration": "07:56",
+        "breakpoints": [
+            {
+                "name": "A",
+                "start": "93",
+                "end": "116",
+                "speed":"1.0",
+                "repeat":"True",
+                "pid": "3bfa81198cf5fc1002a42b91"
+            }
+        ],
+        "youtubeid": "CdBqfOKkfxs",
+        "keyword": ["shuffle", "low", "tutorial", "dance", "breakdown", "step"],
+        "lastWatched": "1392279721",
+        "created": "1392279620",
+        "_id": "4bfa81198cf5fc1002a42b92",
+		"imageURL": "http://i1.ytimg.com/vi/CdBqfOKkfxs/maxresdefault.jpg"			
+	},
+	{
+		"title": "Basic Salsa Steps 1-2-3",
+		"description": "How to Dance SEXY in High Heels w/ Dana Alexa! This Beginner Burlesque TUTORIAL will take you through the routine",
+		"duration": "07:56",
+        "breakpoints": [
+            {
+                "name": "A",
+                "start": "93",
+                "end": "116",
+                "speed":"1.0",
+                "repeat":"True",
+                "pid": "3bfa81198cf5fc1002a42b91"
+            }
+        ],
+        "youtubeid": "PfDVnX4j3-w",
+        "keyword": ["basic", "salsa", "1-2-3", "dance", "sexy", "steps", "dana", "alexa", "high", "heels", "begineer", "burlesque", "tutorial", "routine"],
+        "lastWatched": "1392279821",
+        "created": "1392279619",
+        "_id": "4bfa81198cf5fc1002a42b93",
+		"imageURL": "http://howzzdat.com/wp-content/uploads/2012/11/how-to-do-a-salsa-dance.jpg"			
+	},
+	{
+		"title": "Travis Wall Contemporary Choreography",
+		"description": "Stellar lines, couple choreography",
+		"duration": "07:56",
+        "breakpoints": [
+            {
+                "name": "A",
+                "start": "93",
+                "end": "116",
+                "speed":"1.0",
+                "repeat":"True",
+                "pid": "3bfa81198cf5fc1002a42b91"
+            }
+        ],
+        "youtubeid": "ZxpuyRGZ4Zs",
+        "lastWatched": "1392279921",
+        "keyword": ["travis", "wall", "contemporary", "choreography", "lines", "couple"],
+        "created": "1392279618",
+        "_id": "4bfa81198cf5fc1002a42b94",
+		"imageURL": "http://0.tqn.com/d/realitytv/1/0/S/R/2/Travis-Wall-ATRM.jpg"			
+	},
+	{
+		"title": "Girl's Day - Expect Me tutorial",
+		"description": "This video is a dance tutorial and is meant for educational purposes only!",
+		"duration": "07:56",
+        "breakpoints": [
+            {
+                "name": "A",
+                "start": "93",
+                "end": "116",
+                "speed":"1.0",
+                "repeat":"True",
+                "pid": "3bfa81198cf5fc1002a42b91"
+            }
+        ],
+        "youtubeid": "t0dRaFe-vns",
+        "keyword": ["girls", "day", "expect", "me", "tutorial", "dance", "educational", "purposes"],
+        "lastWatched": "1392289621",
+        "created": "1392279617",
+        "_id": "4bfa81198cf5fc1002a42b95",
+        "imageURL": "http://sumandu.files.wordpress.com/2011/06/girls-day1.jpg"
+	},
+	{
+		"title": "THE FOX - YLVIS DANCE TUTORIAL",
+		"description": "Ylvis - THE FOX Dance TUTORIAL | What Does The Fox Say? Learn the official music video choreography step-by-step",
+		"duration": "07:56",
+        "breakpoints": [
+            {
+                "name": "A",
+                "start": "93",
+                "end": "116",
+                "speed":"1.0",
+                "repeat":"True",
+                "pid": "3bfa81198cf5fc1002a42b91"
+            }
+        ],
+        "youtubeid": "CWJPVm5ui44",
+        "keyword": ["fox", "ylvis", "dance", "official", "music", "video", "step", "choreography", "tutorial"],
+        "lastWatched": "1392299621",
+        "created": "1392279616",
+        "_id": "4bfa81198cf5fc1002a42b96",
+        "imageURL": "http://www.billboard.com/files/styles/promo_650/public/media/iheart_2013_ylvis_650_32_0.jpg"
+	}
+]

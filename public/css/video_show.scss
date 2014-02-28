@@ -1,0 +1,441 @@
+
+$slate-grey: #1b1b1b;
+$header-height: 40px;
+$active-breakpoint-color: #000094;
+$slider-height: 10px;
+$current-slider-z: 3;
+$slider-breakpoint-z:4;
+$side-nav-z:5;
+
+#container{
+    background: $slate-grey;
+}
+
+.hide{
+    display: none !important;
+}
+
+.glyphicon-list{
+    height: 0 !important;
+}
+
+@mixin cp-transition-all($time){
+    -moz-transition: all $time ease-in;
+    -o-transition: all $time ease-in;
+    -webkit-transition: all $time ease-in;
+    transition: all $time ease-in;
+}
+
+
+// RIght now these are in the breakpoint_classes js folder as well...
+// TODO - these will be set dynamically sooner or later
+// so that they look right on all the smartphones
+$SMARTPHONE_HEIGHT: 480px; //in portrait orientation
+$SMARTPHONE_WIDTH: 320px; // also in portrait orientation
+
+$VIDEO_WIDTH: 350px;
+$VIDEO_HEIGHT: 270px;
+
+// this logic is useful and can end up in the js
+$SIDE_NAV_WIDTH: $SMARTPHONE_HEIGHT - $VIDEO_WIDTH;
+$VIDEO_CONTROL_HEIGHT: $SMARTPHONE_WIDTH - $VIDEO_HEIGHT;
+
+$MENU_HEIGHT: 0;
+$MENU_HEIGHT: 30px;
+$BREAKPOINTS_HEIGHT: $SMARTPHONE_WIDTH - $MENU_HEIGHT;
+$BREAKPOINT_HEIGHT: 45px;
+
+#portrait-warning {
+    position: absolute;
+    top: 80px;
+    text-align: center;
+    width: 100%;
+}
+
+#warning-message {
+    color: white;
+    font-size: 20pt;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#warning-logo {
+    margin-top: 30px;
+    width: 200px;
+}
+
+@media only screen and (orientation : landscape) {
+    #landscape-view {
+        display: '';
+    }
+    #portrait-warning {
+        display: none;
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (orientation : portrait) {
+    #portrait-warning {
+        display: '';
+    }
+    #landscape-view {
+        display: none;
+    }
+}
+
+.smartphone-landscape{
+    width:$SMARTPHONE_HEIGHT;
+    height: $SMARTPHONE_WIDTH;
+    background: black;
+}
+
+#player{
+    position: relative;
+
+    // ------- Main video and control section ////
+
+    .player-main{
+        width: $VIDEO_WIDTH;
+        height: $SMARTPHONE_WIDTH;
+        display: inline-block;
+        // background: #4c4c4c;
+        position: absolute;
+
+    }
+
+
+    // ----- player controls ------ //
+
+
+
+    .player-controls{
+        position:relative;
+        width:100%;
+        // background: #000080;
+    }
+
+    .player-slider{
+        width: 100%;
+
+    }
+
+    .main-slider{
+        cursor: pointer;
+        width: 100%;
+        // height: 100%;
+        background: #777777;
+        height:$slider-height;
+        position: relative;
+    }
+
+    .filled-slider{
+        height: 100%;
+        background: #800000;
+        // width:100%;
+        // position: absolute;
+        // left: 95%;
+    }
+
+    .current-breakpoint-slider{
+        background:rgba(0,200,0,.5);
+        height: 100%;
+        position: absolute;
+        top: 0;
+
+        @include cp-transition-all(0.2s);
+        // top: -$slider-height;
+        // width: 5%;
+        z-index: $current-slider-z;
+    }
+
+    .slider-breakpoints{
+        // width:100%;   
+        // height: 10px;
+        // background: #004080;
+    }
+
+    .slider-breakpoint{
+        @include cp-transition-all(0.2s);
+
+        position:absolute;
+        cursor: pointer;
+        left:0;
+        top: -15px;
+        z-index: $slider-breakpoint-z;
+    }
+
+    %active-slider-breakpoint-img{
+    // cant extend nested selectors
+        border: solid 2px #ff0000;
+        top:-2px;
+        left:-2px;
+    }
+
+    .slider-breakpoint-img.active{
+        @extend %active-slider-breakpoint-img;
+    }
+    .slider-breakpoint-img:hover{
+        @extend %active-slider-breakpoint-img;
+    }
+
+    .slider-breakpoint-img{
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+        // background:white;
+    }
+
+    %active-slider-breakpoint-icon{
+    // can't extend nested selectors
+        color:#2920f5;
+    }
+
+    .slider-breakpoint-icon{
+        cursor:pointer;
+        font-size: 18px;
+        // figure out transitions etc. 
+        color: #eeeeee;
+        &:active{
+            color:#0000ff;
+        }
+        &:hover{
+            color:#000080;
+            // @extend %active-slider-breakpoint-icon;
+        }
+        &.to-remove{
+            color: #ff0000;
+        }
+    }
+    .slider-breakpoint-icon.active{
+        @extend %active-slider-breakpoint-icon;
+    }
+
+    .control-buttons{
+        // padding-left:10px;
+        // padding-bottom: 8px;
+        // padding-top:8px;
+        position: relative;
+    }
+
+    .control-button{
+        font-size: 1.2em; // todo responsive
+        display: inline-block;
+        padding:15px 10px;
+        padding-top:0px;
+    }
+    // all icons in the button bar
+    .control-button .fa{
+        // @include transition(width, .2s, ease-in);
+        cursor:pointer;
+        color: #999999;
+
+        // figure out transitions etc. 
+        &:hover{
+            color:#0080ff;
+        }
+        &:active{
+            color:#0000ff;
+        }
+    }
+
+    .control-repeat.active{
+        color:#0000ff;
+    }
+
+    .control-button.playback-button, .control-pauseplay{
+        color:#4c4c4c;
+        &.active{
+            color:#ffffff;
+        }
+    }
+    .control-pauseplay{
+        // font-size: 13px;
+        font-size:1.5em;
+
+    }
+
+    .control-button.playback-button{
+        // font-size: 11px;
+        font-size:1.1em;
+    }
+
+    .control-time{
+        // color: #999999;
+        padding: 0 8px;
+    }
+    .control-max-time{
+        font-size: 10px;
+        color: #999999;
+    }
+    .control-current-time{
+        font-size: 10px;
+        color: #dddddd;
+    }
+
+
+    .control-sound, .control-nosound{
+        font-size: .8em;
+        // font-size: 10px;
+    }
+
+    .hidden{
+        opacity: 0;
+    }
+
+    .fa.with-text{
+        font-size: 1.2em;
+        text-align: center;
+        display: block;
+        position: relative;
+        top:7px;
+    }
+
+    .control-divider{
+        font-size: 1.2em;
+        color:rgb(46, 46, 46);
+        // display: none;
+    }
+
+    .breakpoint-related-controls{
+        position: absolute;
+        right: 10px;
+    }
+
+    .control-helper{
+        top:7px;
+        position: relative;
+        font-size: 10px;
+        display: block;
+        text-align: center;
+        color:#999999;
+    }
+
+    .player-iframe{
+        width: $VIDEO_WIDTH;
+        height: $VIDEO_HEIGHT;
+    }
+
+    //  ----- Side nav ---------- //
+
+    .player-sidenav{
+        width: $SIDE_NAV_WIDTH;
+        height: $SMARTPHONE_WIDTH;
+        background: #252525;
+        // display: inline-block;
+        position: absolute;
+        top:0;
+        right:0;
+        z-index: $side-nav-z;
+    }
+
+    // little menu thing....
+
+    .player-menu{
+        height: $MENU_HEIGHT;
+        // padding: 5px
+        color: #cccccc;
+        text-align:center;
+        padding-top:5px;
+        padding-bottom:5px;
+        // background:#333333;
+        background: -moz-linear-gradient(45deg, #cc0099 0%, #ff0033 80%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left bottom, right top, color-stop(10%,#cc0099), color-stop(80%,#ff0033)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* IE10+ */
+        background: linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* W3C */
+    }
+
+    // ------ Breakpoints container ----- //
+
+    .player-breakpoints{
+        display: block;
+        overflow-y: auto;
+        height: $BREAKPOINTS_HEIGHT;
+        width: $SIDE_NAV_WIDTH;
+    }
+
+}
+
+
+.breakpoints-ul{
+    color:white;
+    padding:0;
+    list-style: none;
+    background: $slate-grey;
+}
+
+.breakpoint-li{
+    position: relative;
+    .breakpoint{
+        background:#191919;
+    }
+    &:nth-child(odd) .breakpoint{
+        background:#222222;
+    }    
+    overflow:hidden;
+    %active-breakpoint{
+        background:$active-breakpoint-color;
+        color:#f3f3f3;
+    }
+    .breakpoint.active{
+        @extend %active-breakpoint;
+    }
+    .breakpoint:hover{
+        @extend %active-breakpoint;
+    }
+    .breakpoint-remove{
+        position: absolute;
+        // text-align: right;
+        top:0;
+        right:0;
+        padding:4px;
+        font-size: .8em;
+        color: #4c4c4c;
+        cursor: pointer;
+        &:hover{
+            color: #800040;
+        }
+        &:active{
+            color: #610030;
+        }
+    }
+}
+
+.breakpoint{
+    @include cp-transition-all(0.1s);
+    max-height: $BREAKPOINT_HEIGHT;
+    display: block;
+    font-size: .8em;
+    color: #e6e6e6;
+    padding: 8px 5px;
+    &:hover{
+        text-decoration: none;
+    }
+    .breakpoint-time{
+        display: inline;
+    }
+    .breakpoint-name{
+        color:#666666;
+        margin-left: 6px;
+        display: inline;
+    }
+}
+
+.breakpoint-empty{
+    color: #5F5F5F;
+    text-align: center;
+    padding: 8px 5px;
+    display: block;
+}
+
+.complaint{
+    color:white;
+}
+
+.debug-button{
+    position: fixed;
+    bottom:0;
+}
+

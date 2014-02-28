@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Breakpoint</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href="/css/application.css" rel="stylesheet">
+	<link href="/css/list.css" rel="stylesheet">
+	<link href="/css/setlist.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="row menubar">
+		<a href="/playlist"><div class="col-xs-2"><span class="helper"></span><span class="glyphicon glyphicon-chevron-left"></span></div></a>
+		<a href="/"><div class="col-xs-8"><span class="helper"></span><img src="/images/logowhite.png"/></div></a>
+		<div class="col-xs-2"></div>
+	</div>
+	
+	<a name="top"></a>
+
+	<div class="container">
+		<div class="setlisttitle">{{title}}</div>
+		<div class="setlistdescription">{{description}}<span class="editbutton" onclick="window.location='/editsetlist/{{setlistId}}'">EDIT</span></div>
+
+
+		<div class="add" onclick="window.location='/addtosetlist/{{setlistId}}'">
+			<div class="ic"><span class="helper"></span><span class="glyphicon glyphicon-plus"></span></div>
+			<div class="icw">ADD<div class="small">videos</div></div>
+		</div>
+		<div class="remove">
+			<div class="ic"><span class="helper"></span><span class="glyphicon glyphicon-minus"></span></div>
+			<div class="icw">REMOVE<div class="small">videos</div></div>
+		</div>
+
+		<div class="divisor">---</div>
+			{{#each videos}}
+				<div class="videoitem">
+					<div class="number">ROUTINE #{{add_one @index}}</div> 
+					<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" onclick="window.location='/video/{{_id}}'">
+						<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
+						</div>
+
+					<div class="title">{{title}}</div>
+					<div class="description-button"><span class="glyphicon glyphicon-chevron-right"></span> Show Description</div>
+					<div class="description"> {{description}} </div>
+					<div class="removebutton" id="{{_id}}"> REMOVE </div>
+				</div>
+				<div class="divider"></div>
+			{{/each}}
+		<div class='guide'>{{#if videos.length}}{{else}}Setlist is empty. Try adding videos.{{/if}}</div>
+
+		<a name="bottom"></a>
+		<div id="delete"><span class="glyphicon glyphicon-trash"></span> DELETE SETLIST </div>
+	</div>
+	{{>notification}}
+	<a href="#top"><div id="gobacktop"> GO BACK TO TOP <span class="glyphicon glyphicon-arrow-up"></span></div></a>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/setlist.js"></script>
+</body>
+</html>

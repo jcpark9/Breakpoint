@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Breakpoint</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href="/css/application.css" rel="stylesheet">
+	<link href="/css/list.css" rel="stylesheet">
+	<link href="/css/create.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="row menubar">
+		<a href="/"><div class="col-xs-2"><span class="helper"></span><span class="glyphicon glyphicon-chevron-left"></span></div></a>
+		<a href="/"><div class="col-xs-8"><span class="helper"></span><img src="/images/logowhite.png"/></div></a>
+		<div class="col-xs-2"></div>
+	</div>
+	<div class="row searchbar">
+		<form action="/search" method="get">
+		<div class="col-xs-10"><span class="helper"></span><input type="text" id="query" value="Search videos..."></div>
+		<div class="col-xs-2"><span class="helper"></span><span id="submit" class="glyphicon glyphicon-search" onclick="search()"></div>
+		</form>
+	</div>
+	<a name="top"></a>
+	<div class="placeholder">
+		<div class="instruction"> Search Youtube dance videos <br/> that you want to learn. </div>
+		<img class="bg" src='/images/placeholder.png'></img> 
+		<div class="suggestions">
+			<div>I FEEL LIKE DANCING...</div>
+			<div>
+				<span class="tag">latin</span>
+				<span class="tag">hiphop</span>
+				<span class="tag">contemporary</span>
+				<span class="tag">ballet</span>
+				<span class="tag">swing</span>
+				<span class="tag">reggae</span>
+				<span class="tag">lyrical</span>
+				<span class="tag">bollywood</span>
+				<span class="tag">tap dance</span>
+				<span class="tag">popping</span>
+				<span class="tag">disco</span>
+				<span class="tag">tap dance</span>
+				<span class="tag">waltz</span>
+				<span class="tag">break dance</span>
+				<span class="tag">belly dance</span>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+
+	</div>
+
+	{{>notification}}
+
+    <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	 <script src="/js/create.js"></script>
+
+</body>
+</html>

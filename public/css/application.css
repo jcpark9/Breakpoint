@@ -1,0 +1,205 @@
+body {
+     background-color:#181818;
+     font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+     font-family: 'Source Sans Pro', sans-serif;
+     font-weight: 300;
+     color: white;
+}
+
+.Lilcontainer {
+     width: 20%;
+     margin-top: 60px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 10px;
+}
+
+.container {
+     width: 90%;
+     margin-top: 60px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 10px;
+}
+
+.position{
+    position:relative;
+    margin-left: 35%;
+    margin-right: 50%;
+}
+
+#overlap{
+    margin-top:10px;
+    font-size:16px;
+    position:relative;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align:center;
+    padding:20px;
+
+}
+
+.menubar {
+    background: -moz-linear-gradient(45deg, #cc0099 0%, #ff0033 80%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(10%,#cc0099), color-stop(80%,#ff0033)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* IE10+ */
+    background: linear-gradient(45deg, #cc0099 0%,#ff0033 80%); /* W3C */
+     height: 45px;
+     text-align: center;
+     margin: 0;
+     position: fixed;
+     width: 100%;
+     left: 0;
+     top: 0;
+     z-index: 10000;
+}
+
+.btn-circle {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  padding: 6px;
+  background-color: #303030;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 100%;
+}
+
+.menubar a {
+     color: white;
+}
+
+.menubar span {
+     height: 50px;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.menubar img {
+     height: 30px;
+     line-height: 45px;
+     vertical-align: middle;
+}
+
+a:hover {
+     text-decoration: none;
+}
+
+select:focus,
+textarea:focus,
+button:focus,
+input:focus {
+    outline: none;
+}
+
+.warning, .notification {
+    position: fixed;
+    top: 230px;
+    color: #303030;
+    width: 90%;
+    background: rgba(255,255,255,0.87);
+    text-align: center;
+    font-size: 12.5pt;
+    left: 5%;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 1px 1px 1px #303030;
+    display: none;
+    font-weight: 300;
+    z-index: 1000;
+}
+
+.warning span {
+    font-size: 20pt;
+}
+
+.notification img {
+    width: 15%;
+    margin: 3px;
+}
+
+.searchbar {
+     background-color:#606060;
+     height: 60px;
+     text-align: center;
+     margin: 0;
+     position: fixed;
+     width: 100%;
+     left: 0;
+     top: 45px;
+     z-index: 10000;
+}
+
+.searchbar a {
+     color: white;
+}
+
+
+#query {
+    width: 100%;
+    border-radius: 30px;
+    height: 42px;
+    font-size: 12pt;
+    font-family: "Roboto";
+    font-weight: 200;
+    padding-left: 15px;
+    padding-right: 15px;
+    vertical-align: middle;
+    font-style: italic;
+    color: #808080;
+}
+
+.searchbar span {
+     height: 60px;
+     color: white;
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input, textarea /*.contenteditable?*/ {
+    -webkit-touch-callout:default;
+    -webkit-user-select:text;
+    -moz-user-select:text;
+    -ms-user-select:text;
+    user-select:text;
+}
+
+.guide {
+    text-align: center;
+    font-weight: 300;
+    color: white;
+    font-size: 14pt;
+    margin-top:15px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+#backToFullList {
+    width: 65%;
+    background-color: #303030;
+    border-radius: 5px;
+    color: #E0E0E0;
+    box-shadow: 1px 1px 1px black;
+    padding: 5px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    text-align: center;
+    font-size: 13pt;
+}

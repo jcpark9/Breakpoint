@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Breakpoint</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href="/css/application.css" rel="stylesheet">
+	<link href="/css/createsetlist.css" rel="stylesheet">
+	<link href="/css/list.css" rel="stylesheet">
+	<link href="/css/setlist.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="row menubar">
+		<a href="/playlist"><div class="col-xs-2"><span class="helper"></span><span class="glyphicon glyphicon-chevron-left"></span></div></a>
+		<a href="/"><div class="col-xs-8"><span class="helper"></span><img src="/images/logowhite.png"/></div></a>
+		<div class="col-xs-2"></div>
+	</div>
+	
+	<a name="top"></a>
+	<img class="diamond" src="/images/diamond.png">
+	<div class="container">
+		<div class="menutitle">CREATE A NEW SETLIST</div>
+		<div>
+		<form>
+			<div class="heading"> <li> Title </li> </div>
+			<input id="title" type="text" maxlength="40">
+			<div class="max"> (Max. 40 characters) </div>
+			<div class="heading"> <li> Description </li> </div>
+			<textarea id="description" rows="5" maxlength="150"></textarea>
+			<div class="max"> (Max. 150 characters) </div>
+		</form>
+
+		<div class="create"> CREATE <div class ="deemph"> and add videos </div> </div>
+
+	</div>
+	
+	{{>warning}}
+	{{>notification}}
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/createsetlist.js"></script>
+</body>
+</html>

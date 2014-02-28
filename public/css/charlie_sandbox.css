@@ -1,0 +1,175 @@
+#container {
+  background: #1b1b1b; }
+
+.glyphicon-list {
+  height: 0 !important; }
+
+/* Smartphones (portrait and landscape) ----------- */
+/* Smartphones (landscape) ----------- */
+/* Smartphones (portrait) ----------- */
+.smartphone-landscape {
+  width: 480px;
+  height: 320px;
+  background: black; }
+
+#player {
+  position: relative; }
+  #player .player-main {
+    width: 350px;
+    height: 320px;
+    display: inline-block;
+    position: absolute; }
+  #player .player-controls {
+    position: relative;
+    width: 100%; }
+  #player .player-slider {
+    width: 100%; }
+  #player .main-slider {
+    cursor: pointer;
+    width: 100%;
+    background: #777777;
+    height: 10px;
+    position: relative; }
+  #player .filled-slider {
+    height: 100%;
+    background: #800000; }
+  #player .current-breakpoint-slider {
+    background: rgba(0, 200, 0, 0.5);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 3; }
+  #player .slider-breakpoints {
+    height: 10px; }
+  #player .slider-breakpoint {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    z-index: 4; }
+  #player .slider-breakpoint-img.active, #player .slider-breakpoint-img:hover {
+    border: solid 2px #ff0000;
+    top: -2px;
+    left: -2px; }
+  #player .slider-breakpoint-img {
+    height: 20px;
+    width: 20px;
+    vertical-align: top; }
+  #player .slider-breakpoint-icon:hover, #player .slider-breakpoint-icon.active {
+    color: #2920f5; }
+  #player .slider-breakpoint-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #eeeeee; }
+    #player .slider-breakpoint-icon:active {
+      color: #0000ff; }
+    #player .slider-breakpoint-icon.to-remove {
+      color: #ff0000; }
+  #player .control-buttons {
+    padding-left: 20px; }
+  #player .control-button {
+    font-size: 1.2em;
+    display: inline-block;
+    padding: 5px; }
+  #player .control-button .fa {
+    cursor: pointer;
+    color: #eeeeee; }
+    #player .control-button .fa:hover {
+      color: #0080ff; }
+    #player .control-button .fa:active {
+      color: #0000ff; }
+  #player .control-max-time {
+    color: #999999; }
+  #player .control-current-time {
+    color: #dddddd; }
+  #player .control-sound, #player .control-nosound {
+    font-size: 0.8em; }
+  #player .hidden {
+    opacity: 0; }
+  #player .add-breakpoint-helper {
+    font-size: 0.5em; }
+  #player .player-iframe {
+    width: 350px;
+    height: 270px; }
+  #player .player-sidenav {
+    width: 130px;
+    height: 320px;
+    background: #252525;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5; }
+  #player .player-menu {
+    height: 30px;
+    color: #cccccc;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: -moz-linear-gradient(45deg, #cc0099 0%, #ff0033 80%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(10%, #cc0099), color-stop(80%, #ff0033));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg, #cc0099 0%, #ff0033 80%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg, #cc0099 0%, #ff0033 80%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #cc0099 0%, #ff0033 80%);
+    /* IE10+ */
+    background: linear-gradient(45deg, #cc0099 0%, #ff0033 80%);
+    /* W3C */ }
+  #player .player-breakpoints {
+    display: block;
+    overflow-y: auto;
+    height: 290px;
+    width: 130px; }
+
+.breakpoints-ul {
+  color: white;
+  padding: 0;
+  list-style: none;
+  background: #1b1b1b; }
+
+.breakpoint-li {
+  position: relative;
+  overflow: hidden; }
+  .breakpoint-li .breakpoint {
+    background: #191919; }
+  .breakpoint-li:nth-child(odd) .breakpoint {
+    background: #222222; }
+  .breakpoint-li .breakpoint.active, .breakpoint-li .breakpoint:hover {
+    background: #000094;
+    color: #f3f3f3; }
+  .breakpoint-li .breakpoint-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    font-size: 0.8em;
+    color: #4c4c4c;
+    cursor: pointer; }
+    .breakpoint-li .breakpoint-remove:hover {
+      color: #800040; }
+    .breakpoint-li .breakpoint-remove:active {
+      color: #610030; }
+
+.breakpoint {
+  max-height: 45px;
+  display: block;
+  font-size: 0.8em;
+  color: #e6e6e6;
+  padding: 8px 5px; }
+  .breakpoint:hover {
+    text-decoration: none; }
+  .breakpoint .breakpoint-time {
+    display: inline; }
+  .breakpoint .breakpoint-name {
+    color: #666666;
+    margin-left: 6px;
+    display: inline; }
+
+.complaint {
+  color: white; }
+
+
+.debug-button {
+  position: fixed;
+  bottom: 0; }

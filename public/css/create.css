@@ -1,0 +1,83 @@
+.container {
+     margin-top: 120px;
+}
+
+.videoitem {
+     margin-bottom: 10px;
+}
+
+
+.placeholder {
+     margin-top: 100px;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.placeholder img {
+     width: 100%;
+     box-shadow: 2px 2px 2px #A0A0A0;
+}
+
+.placeholder .instruction {
+     text-align: center;
+     color: white;
+     font-size: 16pt;
+     position: absolute;
+     top: 130px;
+     padding: 10px;
+     width: 100%;
+     font-weight: 300;
+}
+.guide {
+     line-height: 1.5;
+     margin-top:10px;
+     margin-bottom: 20px;
+     background: url('/images/diamond.png');
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+}
+
+.placeholder .suggestions {
+     text-align: center;
+     color: white;
+     font-size: 15pt;
+     position: absolute;
+     top: 250px;
+     padding: 20px;
+     width: 100%;
+     font-weight: 700;
+}
+
+.tag {
+     opacity: 0;
+     display: inline-block;
+     background: rgba(255,255,255,0.6);
+     padding: 3px 7px 3px 7px;
+     border-radius: 5px;
+     margin: 3px;
+     color: #202020;
+     font-family: Roboto;
+     font-weight: 300;
+     font-size: 11pt;
+}
+
+.title {
+     color: #ee5259;
+}
+
+.description {
+     border-left: 5px solid #f70048;
+}
+
+.videoitem {
+     margin-bottom: 25px;
+}
+
+#gobacktop {
+     color: #ee5259;
+}
+
+.description-button .glyphicon {
+     color: #f70048;
+}

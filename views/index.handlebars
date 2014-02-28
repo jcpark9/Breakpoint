@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Breakpoint</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href="/css/application.css" rel="stylesheet">
+	<link href="/css/index.css" rel="stylesheet">
+</head>
+
+<body>
+	<img id="jumbo" src="/images/breakdance.gif"/>
+	<img id="logo" src="/images/logo.png"/>
+	<div class="container">
+		<div class="menu">
+			{{#each videos}}
+			<li>{{title}}</li>
+			{{/each}}
+			<a href="/create">
+				<div class="menu-button" id="button1">
+					<span class="glyphicon glyphicon-facetime-video"></span><span class="menu-text"> CREATE</span>
+				</div>
+			</a>
+			<a href="/playlist">
+				<div class="menu-button" id="button2">
+					<span class="glyphicon glyphicon glyphicon-play-circle"></span><span class="menu-text"> PLAY </span>
+				</div>
+			</a>
+			<a href="/help">
+				<div class="menu-button"  id="button3">
+					<span class="glyphicon glyphicon-question-sign"></span><span class="menu-text"> HOW TO </div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

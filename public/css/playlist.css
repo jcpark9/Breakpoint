@@ -1,0 +1,198 @@
+.videoitem {
+	margin-bottom: 20px;
+}
+
+hr {
+	background-color: #f8353f;
+	color: #f8353f;
+	border-color: #f8353f;
+}
+
+.container {
+	margin-top: 120px;
+}
+
+.list {
+	display: none;
+}
+
+.folded {
+	font-weight: 700;
+	font-family: "Source Sans Pro";
+	color: white;
+	font-size: 15pt;
+	border-bottom: 1px solid #303030;
+	margin-bottom: 15px;
+}
+
+.folded .glyphicon {
+	margin-right: 20px;
+}
+
+.foldbutton {
+	background-color: #505050;
+	padding: 2px;
+	color: white;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.setlistitem {
+	width: 90%;
+	border: 1px solid #303030;
+	margin-left: 10%;
+	margin-bottom: 10px;
+}
+
+.setlisttitle {
+	background: rgb(10,10,10);
+	height: 30px;
+	font-weight: 600;
+	font-size: 12pt;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	color:  #ee5259;
+	line-height: 1.0;
+	margin-bottom: 0px;
+}
+
+.setlistdescription {
+	padding: 10px;
+	color: white;
+	font-weight: 300;
+	font-size: 10pt;
+}
+
+.setlistfoldbutton {
+	margin-bottom: 0px;
+	padding: 0px;
+	background: rgb(10,10,10);
+}
+
+.setlistfoldbutton span {
+	color: #505050;
+	font-size: 8pt;
+}
+
+.setlistitem .thumbnails {
+	box-shadow: none;
+}
+
+.setlistvideo {
+	border-bottom: 1px dotted rgb(180,180,180);
+	color: rgb(180,180,180);
+	line-height: 1.1;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.setlistvideos {
+	padding-left: 20px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+.setlistnum {
+	font-weight: 700;
+	color: #ee5259;
+	text-align: center;
+}
+
+.add {
+	margin-left: 45%;
+	padding: 3px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #606060;
+	background-color: #ee5259;
+	font-family: "Source Sans Pro";
+	color: white;
+	font-weight: 600;
+	margin-bottom: 15px;
+	width: 50%;
+	font-size: 10pt;
+	text-align: center;
+}
+
+.createplaylist {
+	background-color: #505050;
+	color: white;
+	font-weight: 600;
+	font-size: 12.5pt;
+	padding: 5px;
+	margin-bottom: 15px;
+	text-align: center;
+	box-shadow: 
+	  0 1px 2px #fff, /*bottom external highlight*/
+	  0 -1px 1px #666, /*top external shadow*/ 
+	  inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/ 
+	  inset 0 1px 1px rgba(255,255,255,0.8); /*top internal highlight*/
+}
+
+#lastbutton {
+	margin-bottom: 20px;
+}
+
+.title {
+	color:  #ee5259;
+}
+
+.description {
+	border-left: 5px solid #f70048;
+}
+
+#gobacktop {
+	color: #ee5259;
+	margin-top: 15px;
+}
+
+.searchlist {
+	display: none;
+	margin: 0 auto;
+	margin-top: 120px;
+	width: 90%;
+	padding: 10px;
+}
+
+.searchresulttitle {
+	color: white;
+	font-weight: 800;
+	text-transform:uppercase;
+	font-size: 20pt;
+	line-height: 1.0;
+	margin-bottom: 15px;
+}
+
+#novidfound {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#backToFullList {
+	margin-top: 0px;
+}
+
+.setlist-thumbnails {
+	width: 100%;
+	height: 180px;
+	box-shadow: 1px 1px 1px #A0A0A0;
+}
+
+.setlist-thumbnails:hover .over {
+	width: 100%;
+	height: 180px;
+	display: inline-block;
+	background: rgba(0,0,0,0.5);
+	color: white;
+	text-align: center;
+}
+
+.setlist-thumbnails .over {
+	height: 180px;
+	line-height: 180px;
+	font-size: 40pt;
+}
+
+.description-button .glyphicon {
+     color: #f70048;
+}

@@ -1,0 +1,72 @@
+<body id="container">
+    {{> menubar}}
+    <!-- All the html and stuff goes here -->
+
+    {{!-- <iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/moSFlvxnbgk" allowfullscreen frameborder="0">  </iframe>--}}
+
+    <!-- <div class="smartphone-landscape" id=""> -->
+    {{!-- <div class="" id="" > --}}
+
+    <div class="" id="player" >
+    {{!-- <div class="smartphone-landscape" id="player" > --}}
+        <div class="player-main">
+            <div class="player-video-id" data-video-id="{{videoId}}"></div>
+            <div class="iframe-wrapper">
+                <div class="player-iframe" id="player-iframe"> Video loading! Sit tight</div>
+            </div>
+            <div class="player-controls">
+                <div class="slider-breakpoints">
+                </div>
+                <div class="main-slider">
+                    <div class="filled-slider"></div>
+                </div>
+                <div class="control-buttons">
+                    <span class="control-button">
+                            <i class="fa fa-play control-pauseplay"></i>
+                    </span>
+                    <span class="control-time">
+                        <span class="control-current-time"></span>
+                        <span class="control-max-time"></span>
+                    </span>
+                    <span class="control-button">
+                        <i class="fa fa-volume-up control-sound"></i>
+                    </span>
+                    <span class="control-button">
+                            <i class="fa fa-plus control-addBreakpoint"></i>
+                            <span class="add-breakpoint-helper">
+                                Add Breakpoint
+                            </span>
+                    </span>
+
+
+                </div>
+
+                {{!-- <input class="player-slider" id="player-slider" type='range'> --}}
+
+            </div>
+        </div>
+        <div class="player-sidenav">
+            {{!-- <a href="/">
+                <div class="player-menu">
+                    Menu 
+                </div>
+            </a> --}}
+            <div class="player-breakpoints" id="player-breakpoints"> 
+                <ul class='breakpoints-ul'></ul>
+            </div>
+        </div>
+    </div>
+        <!--     <div class="complaint">
+                And then we implement our own video controls!
+
+                https://code.google.com/p/gdata-issues/issues/detail?id=3007
+            </div>
+         -->
+    <!-- Put your scripts after here -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jsclass_core.js"></script>
+    <script src="/js/breakpoint_classes.js"></script>
+    <script src="/js/charlie_sandbox.js"></script>
+
+</body>

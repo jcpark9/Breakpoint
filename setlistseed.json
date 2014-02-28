@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Hip Hop setlist",
+		"description": "for hip hop vids",
+		"_id": "4bfa81198cf5fc1002a42c80",
+		"setlistvids": ["4bfa81198cf5fc1002a42b91","4bfa81198cf5fc1002a42b93","4bfa81198cf5fc1002a42b95"]
+	},
+	{
+		"title": "Contemporary setlist",
+		"description": "for contemporary vids",
+		"_id": "4bfa81198cf5fc1002a42c82",
+		"setlistvids": ["4bfa81198cf5fc1002a42b92","4bfa81198cf5fc1002a42b94","4bfa81198cf5fc1002a42b96"]
+	}
+]
