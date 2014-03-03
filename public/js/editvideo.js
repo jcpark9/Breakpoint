@@ -7,7 +7,7 @@ $(document).ready(function() {
 });
 
 
-function EditSetlist(button) {
+function EditVideo(button) {
 	button.click(function() {
 		var title = $("#title").val();
 		var description = $("#description").val();
@@ -45,6 +45,6 @@ function EditSetlist(button) {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	new EditSetlist($(".create"));
+	new EditVideo($(".create"));
 }
 

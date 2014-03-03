@@ -3,13 +3,6 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	$(".folded").each(function() {
-		new FoldedList($(this));
-	});
-	$("input[type=checkbox]").each(function() {
-		new Highlight($(this));
-	});
-
 	$("#query").on('keyup', searchVideo);
 	$("#query").on('keypress', stopRKey);
 	$("#query").click(function() {
@@ -18,6 +11,10 @@ $(document).ready(function() {
 		$("#query").css("font-size", "13pt");
 		$("#query").val("");
 		$('#query').keyup();
+	});
+
+	$(".block").each(function() {
+		new Highlight($(this));
 	});
 
 	new AddToSetlist($("#add"));
@@ -32,6 +29,24 @@ function stopRKey(evt) {
    if ((evt.keyCode == 13) && (node.type=="text")) {
    		return false;
    }
+}
+
+function Highlight(block) {
+	var clicked = false;
+	block.click(function() {
+		console.log(clicked);
+	    if(!clicked){
+	    	$(this).children().first().attr("checked", true);
+	        $(this).children().last().css("color", "#eb006f");
+	        $(this).next().slideDown('slow');
+	        clicked = true;
+	    } else {
+	    	$(this).children().first().attr("checked", false);
+	        $(this).children().last().css("color", "#A0A0A0");
+	       	$(this).next().slideUp('slow');
+	        clicked = false;
+	    }
+	});
 }
 
 function searchVideo() {
@@ -78,34 +93,6 @@ function toDefaultView(event) {
 }
 
 
-function Highlight(button) {
-	button.change(function(){
-	    if(this.checked){
-	        $(this).next().css("color", "#eb006f");
-	    } else {
-	        $(this).next().css("color", "#A0A0A0");
-	    }
-	});
-}
-
-function FoldedList(button){
-	var open = false;
-
-	button.click(function() {
-		if(!open) {
-			$(this).parent().next().slideDown('slow');
-			open = true;
-		} else {
-			$(this).parent().next().slideUp('slow');
-			open = false;
-		}
-	});
-
-	button.next().find(".foldbutton").click(function() {
-		$(this).parent().next().slideUp();
-		open = false;
-	})
-}
 
 function AddToSetlist(button) {
 	button.click(function() {
