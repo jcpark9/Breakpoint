@@ -13,6 +13,7 @@ $(document).ready(function() {
 	$("#backToFullList").css("display", "none");
 
     $(".description-button").click(function() {
+    	ga("send", "event", "Show Description", "click");
         console.log("hello");
         $(this).fadeOut(function() {
             $(this).next().fadeIn();
