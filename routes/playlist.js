@@ -35,13 +35,13 @@ exports.view = function(req, res){
 			data.videos = videos;
 		
 			var options = {
-			    "limit": 5,
+			    "limit": 12,
 			    "sort": {"title": -1}
 			}
 			Video.find({}, {}, options, function (err, videos) {
 				data.recentlyWatched = videos;
 				options = {
-				    "limit": 5,
+				    "limit": 12,
 				    "sort": {"created": -1}
 				}
 				Video.find({}, {}, options, function (err, videos) {
