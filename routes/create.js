@@ -6,10 +6,6 @@ exports.view = function(req, res){
     res.render('create');
 };
 
-exports.viewalt = function(req, res){
-    res.render('create2');
-};
-
 exports.add = function(req, res) {
      var video = req.body.id.videoId;
      var title = req.body.snippet.title;

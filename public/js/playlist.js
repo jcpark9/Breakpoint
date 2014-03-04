@@ -3,6 +3,17 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	var startTime = new Date().getTime();
+	$(".preview-thumbnails, .play").click(function() {
+		var EndTime = new Date().getTime();
+		ga('send', {
+		  'hitType': 'event',          // Required.
+		  'eventCategory': 'Time Spent',   // Required.
+		  'eventAction': 'click',      // Required.
+		  'eventValue': EndTime - StartTime
+		});
+	});
+
 	$(".folded").each(function() {
 		new FoldedList($(this));
 	});
@@ -10,7 +21,18 @@ $(document).ready(function() {
 	$("#query").on('keyup', textfieldListener);
 	$("#query").on('keypress', stopRKey);
 
+	$(".preview").css("top", $(window).height()/2 - 150);
+
 	$("#backToFullList").css("display", "none");
+
+
+	$(".grid-videoitem").click(function() {
+		$(this).next().fadeIn();
+	});
+
+	$(".goback").click(function() {
+		$(this).parent().css("display", "none");
+	})
 
     $(".description-button").click(function() {
     	ga("send", "event", "Show Description", "click");
@@ -19,6 +41,8 @@ $(document).ready(function() {
             $(this).next().fadeIn();
         });
     });
+
+    $("#recently").trigger("click");
 })
 
 function textfieldListener() {
