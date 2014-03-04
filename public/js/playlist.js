@@ -58,7 +58,7 @@ function playVideo(id) {
 		  'eventLabel': label,
 		  'eventValue': endTime - startTime
 	});
-	//window.location = '/video/' + id;
+	window.location = '/video/' + id;
 }
 
 function textfieldListener() {
