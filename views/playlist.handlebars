@@ -39,7 +39,7 @@
 				{{#if recentlyWatched.length}}
 					{{#each recentlyWatched}}
 						<div class="videoitem">
-							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" onclick="window.location='/video/{{_id}}'">
+							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" id="{{_id}}">
 								<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
 							</div>
 
@@ -62,7 +62,7 @@
 					{{#each recentlyCreated}}
 						<div class="videoitem">
 						<a href="/video/{{_id}}">
-							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" onclick="window.location='/video/{{_id}}'">
+							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" id="{{_id}}">
 								<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
 							</div>
 						</a>

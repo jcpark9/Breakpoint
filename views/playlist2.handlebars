@@ -43,14 +43,14 @@
 					</div>
 
 					<div class="preview">
-						<div class="preview-thumbnails" style="background: url({{imageURL}}); background-size: cover; background-position: center" onclick="window.location='/video/{{_id}}'">
+						<div class="preview-thumbnails" style="background: url({{imageURL}}); background-size: cover; background-position: center" id="{{_id}}">
 							<div class="preview-over"><span class="helper"></span><span class="glyphicon glyphicon-play-circle"></span></div>
 						</div>
 						
 						<div class="preview-title">{{title}}</div>
 						<div class="preview-description">{{description}}</div>
 						<span class="goback"><span class="glyphicon glyphicon-remove"></span></span>
-						<span class="play" onclick="window.location='/video/{{_id}}'"><span class="glyphicon glyphicon-play"></span> Play Video</span>
+						<span class="play" id="{{_id}}"><span class="glyphicon glyphicon-play"></span> Play Video</span>
 					</div>
 				{{/each}}
 			{{else}}

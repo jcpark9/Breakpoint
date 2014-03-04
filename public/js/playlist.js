@@ -1,18 +1,10 @@
 'use strict';
 
+var startTime = new Date().getTime();
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	var startTime = new Date().getTime();
-	$(".preview-thumbnails, .play").click(function() {
-		var EndTime = new Date().getTime();
-		ga('send', {
-		  'hitType': 'event',          // Required.
-		  'eventCategory': 'Time Spent',   // Required.
-		  'eventAction': 'click',      // Required.
-		  'eventValue': EndTime - StartTime
-		});
-	});
 
 	$(".folded").each(function() {
 		new FoldedList($(this));
@@ -43,7 +35,25 @@ $(document).ready(function() {
     });
 
     $("#recently").trigger("click");
+
+    $(".thumbnails, .preview-thumbnails, .play").click(function() {
+    	var id = $(this).attr("id");
+    	playVideo(id);
+    });
 })
+
+function playVideo(id) {
+	console.log(id);
+	var endTime = new Date().getTime();
+	console.log(endTime - startTime);
+	ga('send', {
+		  'hitType': 'event',          // Required.
+		  'eventCategory': 'Time Spent',   // Required.
+		  'eventAction': 'click',      // Required.
+		  'eventValue': endTime - startTime
+	});
+	window.location = '/video/' + id;
+}
 
 function textfieldListener() {
 	console.log($(this).val());
