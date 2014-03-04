@@ -36,7 +36,7 @@ exports.view = function(req, res){
 		
 			var options = {
 			    "limit": 5,
-			    "sort": {"lastWatched": -1}
+			    "sort": {"title": -1}
 			}
 			Video.find({}, {}, options, function (err, videos) {
 				data.recentlyWatched = videos;
@@ -87,7 +87,7 @@ exports.viewalt = function(req, res){
 		
 			var options = {
 				"limit": 12,
-			    "sort": {"lastWatched": -1}
+			    "sort": {"title": -1}
 			}
 			Video.find({}, {}, options, function (err, videos) {
 				data.recentlyWatched = videos;

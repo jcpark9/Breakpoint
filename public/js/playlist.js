@@ -46,13 +46,19 @@ function playVideo(id) {
 	console.log(id);
 	var endTime = new Date().getTime();
 	console.log(endTime - startTime);
+	var label = "unk";
+	if (id == "4bfa81198cf5fc1002a42b93") label = "salsa"; 
+	if (id == "4bfa81198cf5fc1002a42b91") label = "dougie";
+	if (id == "4bfa81198cf5fc1002a42b92") label = "shuffle";
+	console.log(label);
 	ga('send', {
 		  'hitType': 'event',          // Required.
 		  'eventCategory': 'Time Spent',   // Required.
 		  'eventAction': 'click',      // Required.
+		  'eventLabel': label,
 		  'eventValue': endTime - startTime
 	});
-	window.location = '/video/' + id;
+	//window.location = '/video/' + id;
 }
 
 function textfieldListener() {
