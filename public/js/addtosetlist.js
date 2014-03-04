@@ -34,14 +34,14 @@ function stopRKey(evt) {
 function Highlight(block) {
 	var clicked = false;
 	block.click(function() {
-		console.log(clicked);
+		console.log($(this).children().first().attr("checked"));
 	    if(!clicked){
-	    	$(this).children().first().attr("checked", true);
+	    	$(this).children().first().prop("checked", true);
 	        $(this).children().last().css("color", "#eb006f");
 	        $(this).next().slideDown('slow');
 	        clicked = true;
 	    } else {
-	    	$(this).children().first().attr("checked", false);
+	    	$(this).children().first().prop("checked", false);
 	        $(this).children().last().css("color", "#A0A0A0");
 	       	$(this).next().slideUp('slow');
 	        clicked = false;
