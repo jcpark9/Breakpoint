@@ -2,6 +2,7 @@
 
 <html>
 <head>
+
 	<!-- Google Analytics Content Experiment code -->
 	<script>function utmx_section(){}function utmx(){}(function(){var
 	k='82801935-4',d=document,l=d.location,c=d.cookie;
@@ -52,7 +53,7 @@
 				{{#if recentlyWatched.length}}
 					{{#each recentlyWatched}}
 						<div class="videoitem">
-							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" id="{{_id}}">
+							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover; background-position: center center" id="{{_id}}">
 								<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
 							</div>
 
@@ -75,7 +76,7 @@
 					{{#each recentlyCreated}}
 						<div class="videoitem">
 						<a href="/video/{{_id}}">
-							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" id="{{_id}}">
+							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover; background-position: center center " id="{{_id}}">
 								<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
 							</div>
 						</a>
@@ -98,7 +99,7 @@
 					<div class="setlistitem">
 						<div class="folded setlisttitle">{{title}}</div>
 						<div class="list">
-								<div class="setlist-thumbnails" style="background: url({{thumbnail_of setlistvids.[0]}}); background-size: cover" onclick="window.location='/setlist/{{_id}}'">
+								<div class="setlist-thumbnails" style="background: url({{thumbnail_of setlistvids.[0]}}); background-size: cover; background-position: center center" onclick="window.location='/setlist/{{_id}}'">
 									<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
 								</div>
 							<div class="setlistdescription"> {{description}} <br/> </div>

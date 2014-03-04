@@ -26,7 +26,7 @@ function showResponse(response) {
     		//about what we wanted to extract from the user click. Do we want to return the video id? Do we want
     		//to go to the Youtube url for the user to view the video? Would love your input!
     		html += '<div class="videoitem"> \
-                <div class="thumbnails" onclick = "addData('+i+');" style="background: url('+response.items[i].snippet.thumbnails.high.url+'); background-size: cover"> \
+                <div class="thumbnails" onclick = "addData('+i+');" style="background: url('+response.items[i].snippet.thumbnails.high.url+'); background-size: cover; background-position: center center"> \
                     <div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-plus"></span></div> \
                 </div> \
                 <div class="title">'+response.items[i].snippet.title+'</div> \
@@ -74,8 +74,8 @@ function onClientLoad() {
 function onYouTubeApiLoad() {
     // This API key is intended for use only in this lesson.
     // See http://goo.gl/PdPA1 to get a key for your own applications.
-    //gapi.client.setApiKey('AIzaSyBCvmFiLUeMX4TXRMI7Ep26vO066nVyByg');
-    gapi.client.setApiKey('AIzaSyBIuxGStWI52F5QUf88lV8HHl3hy8Qo3JU');
+    gapi.client.setApiKey('AIzaSyBCvmFiLUeMX4TXRMI7Ep26vO066nVyByg');
+    //gapi.client.setApiKey('AIzaSyBIuxGStWI52F5QUf88lV8HHl3hy8Qo3JU');
 
 }
 // LOCAL KEY: gapi.client.setApiKey('AIzaSyBCvmFiLUeMX4TXRMI7Ep26vO066nVyByg');
