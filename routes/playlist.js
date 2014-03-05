@@ -35,13 +35,13 @@ exports.view = function(req, res){
 			data.videos = videos;
 		
 			var options = {
-			    "limit": 5,
-			    "sort": {"lastWatched": -1}
+			    "limit": 12,
+			    "sort": {"title": -1}
 			}
 			Video.find({}, {}, options, function (err, videos) {
 				data.recentlyWatched = videos;
 				options = {
-				    "limit": 5,
+				    "limit": 12,
 				    "sort": {"created": -1}
 				}
 				Video.find({}, {}, options, function (err, videos) {
@@ -86,19 +86,12 @@ exports.viewalt = function(req, res){
 			data.videos = videos;
 		
 			var options = {
-			    "limit": 5,
-			    "sort": {"lastWatched": -1}
+				"limit": 12,
+			    "sort": {"title": -1}
 			}
 			Video.find({}, {}, options, function (err, videos) {
 				data.recentlyWatched = videos;
-				options = {
-				    "limit": 5,
-				    "sort": {"created": -1}
-				}
-				Video.find({}, {}, options, function (err, videos) {
-					data.recentlyCreated = videos;
-					res.render('playlist2', data);
-				});
+				res.render('playlist2', data);
 			});
 		});
 	});

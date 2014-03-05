@@ -1,8 +1,11 @@
 'use strict';
 
+var startTime = new Date().getTime();
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
 	$(".folded").each(function() {
 		new FoldedList($(this));
 	});
@@ -10,7 +13,18 @@ $(document).ready(function() {
 	$("#query").on('keyup', textfieldListener);
 	$("#query").on('keypress', stopRKey);
 
+	$(".preview").css("top", $(window).height()/2 - 160);
+
 	$("#backToFullList").css("display", "none");
+
+
+	$(".grid-videoitem").click(function() {
+		$(this).next().fadeIn();
+	});
+
+	$(".goback").click(function() {
+		$(this).parent().css("display", "none");
+	})
 
     $(".description-button").click(function() {
     	ga("send", "event", "Show Description", "click");
@@ -19,7 +33,33 @@ $(document).ready(function() {
             $(this).next().fadeIn();
         });
     });
+
+    $("#recently").trigger("click");
+
+    $(".thumbnails, .preview-thumbnails, .play").click(function() {
+    	var id = $(this).attr("id");
+    	playVideo(id);
+    });
 })
+
+function playVideo(id) {
+	console.log(id);
+	var endTime = new Date().getTime();
+	console.log(endTime - startTime);
+	var label = "unk";
+	if (id == "4bfa81198cf5fc1002a42b93") label = "salsa"; 
+	if (id == "4bfa81198cf5fc1002a42b91") label = "dougie";
+	if (id == "4bfa81198cf5fc1002a42b92") label = "shuffle";
+	console.log(label);
+	ga('send', {
+		  'hitType': 'event',          // Required.
+		  'eventCategory': 'Time Spent',   // Required.
+		  'eventAction': 'click',      // Required.
+		  'eventLabel': label,
+		  'eventValue': endTime - startTime
+	});
+	window.location = '/video/' + id;
+}
 
 function textfieldListener() {
 	console.log($(this).val());
@@ -47,7 +87,7 @@ function searchVideo() {
 			}, 1500);
 		});
 	} else {
-		var jqxhr = $.post(document.URL, { 'query': query })
+		var jqxhr = $.post("/playlist", { 'query': query })
 			.done(function(data) {
 				$("#backToFullList").css("display", "");
 				$(".default").css("display", "none");
@@ -61,7 +101,7 @@ function searchVideo() {
 						var video = data[i];
 						var newitem = '<div class="videoitem">\
 						<a href="/video/'+ video._id +'">\
-							<div class="thumbnails" style="background: url('+video.imageURL+'); background-size: cover">\
+							<div class="thumbnails" style="background: url('+video.imageURL+'); background-size: cover; background-position: center center">\
 								<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>\
 							</div>\
 						</a>\

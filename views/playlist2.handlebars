@@ -12,6 +12,7 @@
 	<link href="/css/application.css" rel="stylesheet">
 	<link href="/css/playlist.css" rel="stylesheet">
 	<link href="/css/list2.css" rel="stylesheet">
+	<link href="/css/tile.css" rel="stylesheet">
 
 </head>
 
@@ -31,48 +32,30 @@
 	<a name="top"></a>
 
 	<div class="container default">
-		<div class="folded"><span class="glyphicon glyphicon-time"></span>RECENTLY WATCHED</div>
+		<div class="folded" id="recently"><span class="glyphicon glyphicon-time"></span>RECENTLY WATCHED</div>
 		<div class="list">
-			<div class="block">
-				{{#if recentlyWatched.length}}
-					{{#each recentlyWatched}}
-						<div class="videoitem">
-							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" onclick="window.location='/video/{{_id}}'">
-								<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
-							</div>
+			{{#if recentlyWatched.length}}
+				{{#each recentlyWatched}}
+					<div class="grid-videoitem">
+						<div class="grid-thumbnails" style="background: url({{imageURL}}); background-size: cover; background-position: center">
 
-							<div class="title">{{title}}</div>
-							<div class="description-button"><span class="glyphicon glyphicon-chevron-right"></span> Show Description</div>
-							<div class="description"> {{description}} </div>
 						</div>
-					{{/each}}
-				{{else}}
-					<div class='guide'> You have no breakpoint videos. </div>
-				{{/if}}
-			</div>
-			<div class="foldbutton"><span class="glyphicon glyphicon-chevron-up"></div>
-		</div>
-		
-		<div class="folded"><span class="glyphicon glyphicon-plus-sign"></span>RECENTLY CREATED</div>
-		<div class="list">
-			<div class="block">
-				{{#if recentlyCreated.length}}
-					{{#each recentlyCreated}}
-						<div class="videoitem">
-						<a href="/video/{{_id}}">
-							<div class="thumbnails" style="background: url({{imageURL}}); background-size: cover" onclick="window.location='/video/{{_id}}'">
-								<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
-							</div>
-						</a>
-							<div class="title">{{title}}</div>
-							<div class="description-button"><span class="glyphicon glyphicon-chevron-right"></span> Show Description</div>
-							<div class="description"> {{description}} </div>
+					</div>
+
+					<div class="preview">
+						<div class="preview-thumbnails" style="background: url({{imageURL}}); background-size: cover; background-position: center" id="{{_id}}">
+							<div class="preview-over"><span class="helper"></span><span class="glyphicon glyphicon-play-circle"></span></div>
 						</div>
-					{{/each}}
-				{{else}}
-					<div class='guide'> You have no breakpoint videos. </div>
-				{{/if}}
-			</div>
+						
+						<div class="preview-title">{{title}}</div>
+						<div class="preview-description">{{description}}</div>
+						<span class="goback"><span class="glyphicon glyphicon-remove"></span></span>
+						<span class="play" id="{{_id}}"><span class="glyphicon glyphicon-play"></span> Play Video</span>
+					</div>
+				{{/each}}
+			{{else}}
+				<div class='guide'> You have no breakpoint videos. </div>
+			{{/if}}
 			<div class="foldbutton"><span class="glyphicon glyphicon-chevron-up"></div>
 		</div>
 		
@@ -83,7 +66,7 @@
 					<div class="setlistitem">
 						<div class="folded setlisttitle">{{title}}</div>
 						<div class="list">
-								<div class="setlist-thumbnails" style="background: url({{thumbnail_of setlistvids.[0]}}); background-size: cover" onclick="window.location='/setlist/{{_id}}'">
+								<div class="setlist-thumbnails" style="background: url({{thumbnail_of setlistvids.[0]}}); background-size: cover; background-position: center center" onclick="window.location='/setlist/{{_id}}'">
 									<div class="over"><span class="helper"></span><span class="glyphicon glyphicon glyphicon-play-circle"></span></div>
 								</div>
 							<div class="setlistdescription"> {{description}} <br/> </div>
