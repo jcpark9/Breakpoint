@@ -54,7 +54,9 @@ exports.watchVideo = function(req, res){
                 'layout':'angular_layout',
                 'cssFiles': [
                     {filename: 'video_show.css'},
-                    {filename:'font-awesome.min.css'}
+                    {filename:'font-awesome.min.css'},
+                    {filename: 'playmenu.css'}
+
                 ],
                 ytid: videoYTID,
                 helpers: {
