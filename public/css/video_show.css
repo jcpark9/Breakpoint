@@ -112,13 +112,13 @@
   #player .control-button {
     font-size: 0.85em;
     display: inline-block;
-    padding: 8px 2px; }
+    padding: 6px 2px; }
     @media screen and (min-width: 600px) {
       #player .control-button {
         font-size: 1.2em; } }
     @media screen and (min-width: 600px) {
       #player .control-button {
-        padding: 15px 5px; } }
+        padding: 10px 5px; } }
   #player .control-button .fa {
     cursor: pointer;
     color: #999999; }
@@ -185,6 +185,20 @@
     @media screen and (min-width: 600px) {
       #player .control-divider {
         font-size: 1.2em; } }
+  #player .button-group-with-label {
+    position: relative;
+    display: inline-block; }
+  #player .control-sub-label {
+    position: absolute;
+    display: inline-block;
+    bottom: -2px;
+    text-align: center;
+    padding-left: 1.2em;
+    font-size: 9px; }
+    @media screen and (min-width: 600px) {
+      #player .control-sub-label {
+        padding-left: 2em;
+        font-size: 11px; } }
   #player .breakpoint-related-controls {
     position: absolute;
     right: 10px; }
