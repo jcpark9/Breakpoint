@@ -44,7 +44,9 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
             <div class="player-controls">
                 <div class="slider-breakpoints" ng-model='breakpoints'>
                     <span class="slider-breakpoint" data-bp-id="\{{sbp.breakPointId}}" ng-repeat="sbp in breakpoints" style="left:\{{sliderBreakpointLeft(sbp)}}%" ng-click="clickedSliderBreakpoint(sbp)" ng-mouseenter="addSegmentDisplayBreakpoint(sbp)" ng-mouseleave="removeSegmentDisplayBreakpoint(sbp)">
-                        <i class='fa fa-tint fa-flip-vertical slider-breakpoint-icon' ng-class="{active: isCurrentBreakpoint(sbp)}"></i>
+                        {{!-- <i class='fa fa-tint fa-flip-vertical slider-breakpoint-icon' ng-class="{active: isCurrentBreakpoint(sbp)}"></i> --}}
+                        <img src="/images/\{{sliderBreakpointSrc(sbp)}}" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" >
+                        {{!-- <img src="/images/break_white.png" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" > --}}
                     </span>
                 </div>
                 <div class="main-slider" ng-click="clickedSlider($event)">

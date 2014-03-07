@@ -48,7 +48,18 @@ var BreakPointCtrl = function($scope, $timeout) {
 
     $scope.sliderBreakpointLeft = function(bp){
         if (bp != undefined){
+            // return $scope.controls.xPercentFromTime(bp.startTime, {offset: false});
             return $scope.controls.xPercentFromTime(bp.startTime, {offset: true});
+        }
+    }
+
+    $scope.sliderBreakpointSrc = function(bp){
+        if (bp != undefined){
+            if (bp != $scope.currentBreakpoint){
+                return '/break_white.png';
+            } else {
+                return '/break_blue.png';
+            }
         }
     }
 
@@ -294,6 +305,7 @@ var BreakPointCtrl = function($scope, $timeout) {
         // update the db
         $scope.updateBreakpointsData();
     }
+
 
     // todo - move these into the breakpoint_classes.js
     $scope.clickedSetEndTime = function(){

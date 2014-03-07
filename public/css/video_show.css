@@ -95,11 +95,11 @@
     color: #2920f5; }
   #player .slider-breakpoint-icon {
     cursor: pointer;
-    font-size: 12px;
+    height: 12px;
     color: #eeeeee; }
     @media screen and (min-width: 480px) {
       #player .slider-breakpoint-icon {
-        font-size: 18px; } }
+        height: 16px; } }
     #player .slider-breakpoint-icon:active {
       color: #0000ff; }
     #player .slider-breakpoint-icon:hover {
@@ -109,19 +109,33 @@
   #player .control-buttons {
     position: relative; }
   #player .control-button {
-    font-size: 1.1em;
+    font-size: 0.9em;
     display: inline-block;
-    padding: 15px 10px;
-    padding-top: 0px; }
+    padding: 8px 6px; }
     @media screen and (min-width: 480px) {
       #player .control-button {
-        font-size: 1.4em; } }
+        font-size: 1.3em; } }
+    @media screen and (min-width: 480px) {
+      #player .control-button {
+        padding: 15px 10px; } }
   #player .control-button .fa {
     cursor: pointer;
     color: #999999; }
     #player .control-button .fa:hover {
       color: #0080ff; }
     #player .control-button .fa:active {
+      color: #0000ff; }
+  #player .control-button-with-text {
+    padding-top: 4px; }
+  #player .control-text {
+    color: #999999;
+    font-size: 12px; }
+    @media screen and (min-width: 480px) {
+      #player .control-text {
+        font-size: 15px; } }
+    #player .control-text:hover {
+      color: #0080ff; }
+    #player .control-text:active {
       color: #0000ff; }
   #player .control-repeat.active {
     color: #0000ff; }
@@ -134,8 +148,6 @@
     @media screen and (min-width: 480px) {
       #player .control-pauseplay {
         font-size: 1.5em; } }
-  #player .control-button.playback-button {
-    font-size: 1.1em; }
   #player .control-time {
     padding: 0 8px; }
   #player .control-max-time {

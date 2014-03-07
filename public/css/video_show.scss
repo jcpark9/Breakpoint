@@ -33,6 +33,13 @@ $side-nav-z:5;
     font-size: $mobile; //defaults to non-mobile
 }
 
+@mixin responsive-height($non-mobile, $mobile){
+    @media screen and (min-width: 480px){
+        height: $non-mobile;
+    }
+    height: $mobile; //defaults to non-mobile
+}
+
 // RIght now these are in the breakpoint_classes js folder as well...
 // TODO - these will be set dynamically sooner or later
 // so that they look right on all the smartphones
@@ -195,11 +202,14 @@ $BREAKPOINT_HEIGHT: 45px;
     %active-slider-breakpoint-icon{
     // can't extend nested selectors
         color:#2920f5;
+
     }
 
     .slider-breakpoint-icon{
         cursor:pointer;
-        @include responsive-font-size(18px, 12px);
+        @include responsive-height(16px, 12px); // when using img
+
+        // @include responsive-font-size(18px, 12px); // when using font
         // font-size: 18px;
         // figure out transitions etc. 
         color: #eeeeee;
@@ -227,11 +237,15 @@ $BREAKPOINT_HEIGHT: 45px;
 
     .control-button{
         // font-size: 1.2em; // todo responsive
-        @include responsive-font-size(1.4em, 1.1em);
+        @include responsive-font-size(1.3em, .9em);
 
         display: inline-block;
-        padding:15px 10px;
-        padding-top:0px;
+        @media screen and (min-width: 480px){
+            padding:15px 10px;
+        }
+            padding:8px 6px;
+
+        // padding-top:0px;
     }
     // all icons in the button bar
     .control-button .fa{
@@ -246,6 +260,22 @@ $BREAKPOINT_HEIGHT: 45px;
         &:active{
             color:#0000ff;
         }
+    }
+
+    .control-button-with-text{
+        padding-top:4px;
+    }
+
+    .control-text{
+        color: #999999;
+        @include responsive-font-size(15px, 12px);
+        &:hover{
+            color:#0080ff;
+        }
+        &:active{
+            color:#0000ff;
+        }
+
     }
 
     .control-repeat.active{
@@ -267,7 +297,7 @@ $BREAKPOINT_HEIGHT: 45px;
 
     .control-button.playback-button{
         // font-size: 11px;
-        font-size:1.1em;
+        // font-size:1.1em;
     }
 
     .control-time{

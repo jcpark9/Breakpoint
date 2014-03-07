@@ -600,7 +600,7 @@ var BreakPointVideoControls = new JS.Class({
         // center on position
         var halfPercentage = 0;
         if (options && options.offset){
-            halfPercentage = BreakPointPlayer.SLIDER_BREAKPOINT_WIDTH / 4 / totalWidth; 
+            halfPercentage = BreakPointPlayer.SLIDER_BREAKPOINT_WIDTH / 2 / totalWidth; 
         }
         // var halfPercentage = 0;
         var percentage = (time / this.maxTime() - halfPercentage) * 100 ;

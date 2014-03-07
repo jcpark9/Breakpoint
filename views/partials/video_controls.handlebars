@@ -30,16 +30,16 @@
 
 <span class="control-fine">
     <a href="" class="control-button" ng-click="clickedIncTime(-.1)">
-        <i class="fa fa-angle-double-left with-text"></i>
-        <span class="control-helper">
-            -01.s
+        {{!-- <i class="fa fa-angle-double-left with-text"></i> --}}
+        <span class="control-text">
+            -0.1s
         </span>
     </a>
 
     <a href="" class="control-button" ng-click="clickedIncTime(.1)">
-        <i class="fa fa-angle-double-right with-text"></i>
-        <span class="control-helper">
-            +01.s
+        {{!-- <i class="fa fa-angle-double-right with-text"></i> --}}
+        <span class="control-text">
+            +0.1s
         </span>
     </a>
 </span>
@@ -54,36 +54,35 @@
 <!-- Breakpoint controls. these will be refactored soon -->
 
 <span class="breakpoint-related-controls">
-    <a href="" class="control-button" ng-show="hasCurrentBreakpoint()" ng-click="clickedSetStartTime()">
+    <a href="" class="control-button control-button-with-text" ng-show="hasCurrentBreakpoint()" ng-click="clickedSetStartTime()">
         <i class="fa fa-step-backward control-addBreakpoint with-text"></i>
         <span class="control-helper finish">
             Edit Start
         </span>
     </a>
 
-    <a href="" class="control-button" ng-show="hasCurrentBreakpoint()" ng-click="clickedSetEndTime()">
+    <a href="" class="control-button control-button-with-text" ng-show="hasCurrentBreakpoint()" ng-click="clickedSetEndTime()">
         <i class="fa fa-step-forward control-addBreakpoint with-text"></i>
         <span class="control-helper finish">
             Set End
         </span>
     </a>
 
-    <a class="control-button" href="" ng-show="hasCurrentBreakpoint()"  ng-click="clickedLoopOnCurrent(event)" >
+    <a class="control-button control-button-with-text" href="" ng-show="hasCurrentBreakpoint()"  ng-click="clickedLoopOnCurrent(event)" >
         <i class="fa fa-repeat control-repeat with-text" ng-class="{active: loopOnCurrent}" ></i>
         <span class="control-helper">
             Loop on BP
         </span>
     </a>
-
-
-    <a href="" class="control-button" ng-show="false" ng-click="clickedSaveBreakpoint()">
+{{!-- 
+    <a href="" class="control-button control-button-with-text" ng-show="false" ng-click="clickedSaveBreakpoint()">
         <i class="fa fa-check control-addBreakpoint" ></i>
         <span class="control-helper finish">
             Save BP
         </span>
-    </a>
+    </a> --}}
 
-    <a href="" class="control-button" ng-show="true" ng-click="clickedAddBreakpoint()">
+    <a href="" class="control-button control-button-with-text" ng-show="true" ng-click="clickedAddBreakpoint()">
         <i class="fa fa-plus control-addBreakpoint with-text" ></i>
         <span class="control-helper add-new">
             Add BP
