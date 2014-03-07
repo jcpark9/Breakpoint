@@ -23,7 +23,7 @@
 	position: absolute;
 	width: 90%;
 	left: 5%;
-	z-index: 1000;
+	z-index: 10000000000;
 	background: rgba(255,255,255,0.9);
 	border-radius: 10px;
 	padding: 15px;

@@ -99,7 +99,6 @@ app.get('/setlist/:setlistId/remove/:videoId', setlist.remove);
 app.get('/setlist/:setlistId/delete', setlist.delete);
 
 app.get('/playlist', playlist.view);
-app.get('/playlist/tile', playlist.viewalt);
 app.post('/playlist', playlist.search);
 
 app.get('/help', help.view);

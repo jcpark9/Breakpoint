@@ -90,7 +90,7 @@ function search(tag) {
 
     var query = $("#query").val();
     if (tag) {
-	   query = tag;
+	   query = tag + " tutorial";
     }
 
     // Use the JavaScript client library to create a search.list() API call.
