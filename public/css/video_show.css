@@ -95,8 +95,11 @@
     color: #2920f5; }
   #player .slider-breakpoint-icon {
     cursor: pointer;
-    font-size: 18px;
+    font-size: 12px;
     color: #eeeeee; }
+    @media screen and (min-width: 480px) {
+      #player .slider-breakpoint-icon {
+        font-size: 18px; } }
     #player .slider-breakpoint-icon:active {
       color: #0000ff; }
     #player .slider-breakpoint-icon:hover {
@@ -106,10 +109,13 @@
   #player .control-buttons {
     position: relative; }
   #player .control-button {
-    font-size: 1.2em;
+    font-size: 1.1em;
     display: inline-block;
     padding: 15px 10px;
     padding-top: 0px; }
+    @media screen and (min-width: 480px) {
+      #player .control-button {
+        font-size: 1.4em; } }
   #player .control-button .fa {
     cursor: pointer;
     color: #999999; }
@@ -124,30 +130,41 @@
     #player .control-button.playback-button.active, #player .control-pauseplay.active {
       color: #ffffff; }
   #player .control-pauseplay {
-    font-size: 1.5em; }
+    font-size: 1.3em; }
+    @media screen and (min-width: 480px) {
+      #player .control-pauseplay {
+        font-size: 1.5em; } }
   #player .control-button.playback-button {
     font-size: 1.1em; }
   #player .control-time {
     padding: 0 8px; }
   #player .control-max-time {
-    font-size: 10px;
     color: #999999; }
   #player .control-current-time {
     font-size: 10px;
     color: #dddddd; }
   #player .control-sound, #player .control-nosound {
     font-size: 0.8em; }
+    @media screen and (min-width: 480px) {
+      #player .control-sound, #player .control-nosound {
+        font-size: 1em; } }
   #player .hidden {
     opacity: 0; }
   #player .fa.with-text {
-    font-size: 1.2em;
+    font-size: 0.9em;
     text-align: center;
     display: block;
     position: relative;
     top: 7px; }
+    @media screen and (min-width: 480px) {
+      #player .fa.with-text {
+        font-size: 1em; } }
   #player .control-divider {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #2e2e2e; }
+    @media screen and (min-width: 480px) {
+      #player .control-divider {
+        font-size: 1.2em; } }
   #player .breakpoint-related-controls {
     position: absolute;
     right: 10px; }
@@ -158,6 +175,9 @@
     display: block;
     text-align: center;
     color: #999999; }
+    @media screen and (min-width: 480px) {
+      #player .control-helper {
+        font-size: 14px; } }
   #player .player-iframe {
     width: 350px;
     height: 270px; }

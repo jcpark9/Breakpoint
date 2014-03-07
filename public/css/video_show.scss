@@ -26,6 +26,12 @@ $side-nav-z:5;
     transition: all $time ease-in;
 }
 
+@mixin responsive-font-size($non-mobile, $mobile){
+    @media screen and (min-width: 480px){
+        font-size: $non-mobile;
+    }
+    font-size: $mobile; //defaults to non-mobile
+}
 
 // RIght now these are in the breakpoint_classes js folder as well...
 // TODO - these will be set dynamically sooner or later
@@ -193,7 +199,8 @@ $BREAKPOINT_HEIGHT: 45px;
 
     .slider-breakpoint-icon{
         cursor:pointer;
-        font-size: 18px;
+        @include responsive-font-size(18px, 12px);
+        // font-size: 18px;
         // figure out transitions etc. 
         color: #eeeeee;
         &:active{
@@ -219,7 +226,9 @@ $BREAKPOINT_HEIGHT: 45px;
     }
 
     .control-button{
-        font-size: 1.2em; // todo responsive
+        // font-size: 1.2em; // todo responsive
+        @include responsive-font-size(1.4em, 1.1em);
+
         display: inline-block;
         padding:15px 10px;
         padding-top:0px;
@@ -251,7 +260,8 @@ $BREAKPOINT_HEIGHT: 45px;
     }
     .control-pauseplay{
         // font-size: 13px;
-        font-size:1.5em;
+        // font-size:1.5em;
+        @include responsive-font-size(1.5em, 1.3em);
 
     }
 
@@ -265,7 +275,8 @@ $BREAKPOINT_HEIGHT: 45px;
         padding: 0 8px;
     }
     .control-max-time{
-        font-size: 10px;
+        // font-size: 10px;
+        // @include responsive-font-size(1em, 1em);
         color: #999999;
     }
     .control-current-time{
@@ -275,7 +286,9 @@ $BREAKPOINT_HEIGHT: 45px;
 
 
     .control-sound, .control-nosound{
-        font-size: .8em;
+        // font-size: .8em;
+        @include responsive-font-size(1em, .8em);
+
         // font-size: 10px;
     }
 
@@ -284,7 +297,9 @@ $BREAKPOINT_HEIGHT: 45px;
     }
 
     .fa.with-text{
-        font-size: 1.2em;
+        // font-size: 1.2em;
+        @include responsive-font-size(1em, .9em);
+
         text-align: center;
         display: block;
         position: relative;
@@ -292,7 +307,8 @@ $BREAKPOINT_HEIGHT: 45px;
     }
 
     .control-divider{
-        font-size: 1.2em;
+        // font-size: 1.2em;
+        @include responsive-font-size(1.2em, 1em);
         color:rgb(46, 46, 46);
         // display: none;
     }
@@ -305,7 +321,10 @@ $BREAKPOINT_HEIGHT: 45px;
     .control-helper{
         top:7px;
         position: relative;
-        font-size: 10px;
+        // font-size: 10px;
+        @include responsive-font-size(14px, 10px);
+        
+
         display: block;
         text-align: center;
         color:#999999;
