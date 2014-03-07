@@ -1,24 +1,8 @@
 <!-- All the speed controls etc -->
-
-<a href="" class="control-button playback-button" ng-show="playbackRateExists(.25)" ng-click="clickedPlaybackRate(.25)" ng-class="{active: playbackActive(.25)}">
-    .25x
-</a>
-<a href="" class="control-button playback-button" ng-show="playbackRateExists(.5)" ng-click="clickedPlaybackRate(.5)" ng-class="{active: playbackActive(.5)}">
-    .5x
-</a>
 <a href="" class="control-button playback-button"  ng-click="clickedPausePlay()" >
         <i class="fa fa-play control-pauseplay"ng-class="{active: playbackActive(1)}"></i>
 </a>
-<span class="control-divider">|</span>
 
-{{!-- <a href="" class="control-button playback-button" ng-show="playbackRateExists(1.5)" ng-click="clickedPlaybackRate(1.5)" ng-class="{active: playbackActive(1.5)}">
-    1.5x
-</a>
-<a href="" class="control-button playback-button"  ng-show="playbackRateExists(2)" ng-click="clickedPlaybackRate(2)" ng-class="{active: playbackActive(2)}">
-    2x
-</a>
- --}}
-<!-- Time display. set in breakpoint_classes.js, fn updateTime() -->
 
 <span class="control-time">
     <a class="control-current-time"> </a> /
@@ -27,6 +11,15 @@
 
 <span class="control-divider">|</span>
 
+
+<span class="button-group-with-label">
+    <a href="" class="control-button playback-button" ng-show="playbackRateExists(.25)" ng-click="clickedPlaybackRate(.25)" ng-class="{active: playbackActive(.25)}">
+        .25x
+    </a>
+    <a href="" class="control-button playback-button" ng-show="playbackRateExists(.5)" ng-click="clickedPlaybackRate(.5)" ng-class="{active: playbackActive(.5)}">
+        .5x
+    </a>
+</span>
 
 <span class="control-fine">
     <a href="" class="control-button" ng-click="clickedIncTime(-.1)">
@@ -45,12 +38,24 @@
 </span>
 
 
+{{!-- <a href="" class="control-button playback-button" ng-show="playbackRateExists(1.5)" ng-click="clickedPlaybackRate(1.5)" ng-class="{active: playbackActive(1.5)}">
+    1.5x
+</a>
+<a href="" class="control-button playback-button"  ng-show="playbackRateExists(2)" ng-click="clickedPlaybackRate(2)" ng-class="{active: playbackActive(2)}">
+    2x
+</a>
+ --}}
+<!-- Time display. set in breakpoint_classes.js, fn updateTime() -->
+
+
+{{!-- <span class="control-divider">|</span> --}}
+
+
 <a href=""  class="control-button hide" ng-click="clickedVolume()">
     <i class="fa fa-volume-up control-sound" ></i>
-
 </a>
 
-<span class="control-divider">|</span>
+{{!-- <span class="control-divider">|</span> --}}
 <!-- Breakpoint controls. these will be refactored soon -->
 
 <span class="breakpoint-related-controls">

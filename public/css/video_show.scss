@@ -7,6 +7,8 @@ $current-slider-z: 3;
 $slider-breakpoint-z:4;
 $side-nav-z:5;
 
+$css-mobile-breakpoint: 600px;
+
 #container{
     background: $slate-grey;
 }
@@ -27,14 +29,15 @@ $side-nav-z:5;
 }
 
 @mixin responsive-font-size($non-mobile, $mobile){
-    @media screen and (min-width: 480px){
+    @media screen and (min-width: $css-mobile-breakpoint){
+     //normally 480,but this encompasses tablets;
         font-size: $non-mobile;
     }
     font-size: $mobile; //defaults to non-mobile
 }
 
 @mixin responsive-height($non-mobile, $mobile){
-    @media screen and (min-width: 480px){
+    @media screen and (min-width: $css-mobile-breakpoint){
         height: $non-mobile;
     }
     height: $mobile; //defaults to non-mobile
@@ -229,7 +232,7 @@ $BREAKPOINT_HEIGHT: 45px;
     }
 
     .control-buttons{
-        // padding-left:10px;
+        padding-left:5px;
         // padding-bottom: 8px;
         // padding-top:8px;
         position: relative;
@@ -237,13 +240,13 @@ $BREAKPOINT_HEIGHT: 45px;
 
     .control-button{
         // font-size: 1.2em; // todo responsive
-        @include responsive-font-size(1.3em, .9em);
+        @include responsive-font-size(1.2em, .85em);
 
         display: inline-block;
-        @media screen and (min-width: 480px){
-            padding:15px 10px;
+        @media screen and (min-width: $css-mobile-breakpoint){
+            padding:15px 5px;
         }
-            padding:8px 6px;
+            padding:8px 2px;
 
         // padding-top:0px;
     }
@@ -264,11 +267,13 @@ $BREAKPOINT_HEIGHT: 45px;
 
     .control-button-with-text{
         padding-top:4px;
+        padding-left:2px;
+        padding-right:2px;
     }
 
     .control-text{
         color: #999999;
-        @include responsive-font-size(15px, 12px);
+        @include responsive-font-size(15px, 10px);
         &:hover{
             color:#0080ff;
         }
@@ -282,17 +287,23 @@ $BREAKPOINT_HEIGHT: 45px;
         color:#0000ff;
     }
 
-    .control-button.playback-button, .control-pauseplay{
+
+    .control-button.playback-button{
         color:#4c4c4c;
         &.active{
-            color:#ffffff;
+            // color:#ffffff;
+            color:#0000ee;
         }
     }
+
     .control-pauseplay{
         // font-size: 13px;
         // font-size:1.5em;
         @include responsive-font-size(1.5em, 1.3em);
-
+        &.active{
+            color:#ffffff;
+            // color:#0000ff;
+        }
     }
 
     .control-button.playback-button{
@@ -303,14 +314,16 @@ $BREAKPOINT_HEIGHT: 45px;
     .control-time{
         // color: #999999;
         padding: 0 8px;
+        @include responsive-font-size(11px, 10px);
+
     }
     .control-max-time{
         // font-size: 10px;
-        // @include responsive-font-size(1em, 1em);
+        // font-size: 10px;
         color: #999999;
     }
     .control-current-time{
-        font-size: 10px;
+        // font-size: 10px;
         color: #dddddd;
     }
 
@@ -352,7 +365,7 @@ $BREAKPOINT_HEIGHT: 45px;
         top:7px;
         position: relative;
         // font-size: 10px;
-        @include responsive-font-size(14px, 10px);
+        @include responsive-font-size(12px, 10px);
         
 
         display: block;
