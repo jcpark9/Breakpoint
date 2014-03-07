@@ -244,9 +244,9 @@ $BREAKPOINT_HEIGHT: 45px;
 
         display: inline-block;
         @media screen and (min-width: $css-mobile-breakpoint){
-            padding:15px 5px;
+            padding:10px 5px;
         }
-            padding:8px 2px;
+            padding:6px 2px;
 
         // padding-top:0px;
     }
@@ -354,6 +354,25 @@ $BREAKPOINT_HEIGHT: 45px;
         @include responsive-font-size(1.2em, 1em);
         color:rgb(46, 46, 46);
         // display: none;
+    }
+
+    .button-group-with-label{
+        position: relative;
+        display: inline-block;
+    }
+
+    .control-sub-label{
+        position: absolute;
+        display: inline-block;
+        bottom: -2px;
+        text-align: center;
+        @media screen and (min-width: $css-mobile-breakpoint){
+            padding-left: 2em;
+            font-size: 11px;   
+        }
+        padding-left:1.2em;
+        font-size: 9px;
+         
     }
 
     .breakpoint-related-controls{

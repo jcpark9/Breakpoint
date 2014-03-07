@@ -11,7 +11,6 @@
 
 <span class="control-divider">|</span>
 
-
 <span class="button-group-with-label">
     <a href="" class="control-button playback-button" ng-show="playbackRateExists(.25)" ng-click="clickedPlaybackRate(.25)" ng-class="{active: playbackActive(.25)}">
         .25x
@@ -19,22 +18,31 @@
     <a href="" class="control-button playback-button" ng-show="playbackRateExists(.5)" ng-click="clickedPlaybackRate(.5)" ng-class="{active: playbackActive(.5)}">
         .5x
     </a>
+    <span class="control-sub-label">
+        Speed
+    </span>
 </span>
 
-<span class="control-fine">
+
+
+<span class="control-divider">|</span>
+
+<span class="control-fine button-group-with-label">
     <a href="" class="control-button" ng-click="clickedIncTime(-.1)">
         {{!-- <i class="fa fa-angle-double-left with-text"></i> --}}
         <span class="control-text">
             -0.1s
         </span>
     </a>
-
     <a href="" class="control-button" ng-click="clickedIncTime(.1)">
         {{!-- <i class="fa fa-angle-double-right with-text"></i> --}}
         <span class="control-text">
             +0.1s
         </span>
     </a>
+    <span class="control-sub-label">
+        Jump
+    </span>
 </span>
 
 
