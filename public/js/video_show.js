@@ -50,6 +50,10 @@ var BreakPointCtrl = function($scope, $timeout) {
         }
     }
 
+    $scope.notMobile = function(){
+        return !isMobile();
+    }
+
     $scope.logBreakPoints = function(){
         console.log("CLICKED");
         console.log($scope.breakpoints.toString());
