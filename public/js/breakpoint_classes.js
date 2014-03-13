@@ -207,9 +207,9 @@ var BreakPointPlayer = new JS.Class({
         this.fitToScreen($(window));
         this.fitToScreen($(window));
 
-        if (BreakPointPlayer.AUTOPLAY){
-            this.video.playVideo();
-        }
+        // if (BreakPointPlayer.AUTOPLAY){
+        //     this.video.playVideo();
+        // }
 
     },
 
@@ -1269,16 +1269,15 @@ function onYouTubeIframeAPIReady() {
     // video.onVideoLoaded();
     // video.renderOnPage();
 
-
-
-
     player = new YT.Player('player-iframe', {
-      height: '390',
-      width: '640',
-      videoId: youtube_id,
-      playerVars: {controls: 0},
+        height: '390',
+        width: '640',
+        videoId: youtube_id,
+        playerVars: {controls: 0},
 
-      events: {
+        events: {
+            'onReady': video.onPlayerReady,
+
         // 'onReady': onPlayerReady,
         // 'onStateChange': onPlayerStateChange
       }
