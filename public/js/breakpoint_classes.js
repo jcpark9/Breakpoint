@@ -234,7 +234,7 @@ var BreakPointPlayer = new JS.Class({
 
     fitToScreen: function(toFit) {
         
-        // return;
+        return;
 
         var stats = BreakPointPlayer;
 
