@@ -131,7 +131,7 @@ var BreakPointPlayer = new JS.Class({
         // USE_DEV_BREAKPOINTS: true,
 
         CONTROLS: 0, // 0 for no default youtube controls, 1 for youtube controls
-        AUTOPLAY: false, //necessary to load conrtols because of maxtime probs
+        AUTOPLAY: true, //necessary to load conrtols because of maxtime probs
 
         LOCAL_VIDS: "some_key",
 
