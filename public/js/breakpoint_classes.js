@@ -1277,8 +1277,10 @@ function onYouTubeIframeAPIReady() {
     // video.renderOnPage();
 
     player = new YT.Player('player-iframe', {
-        height: '390', // theres a min height on this
-        width: '640',
+        // height: '390', // theres a min height on this
+        // width: '640',
+        height: '290',
+        width:'640',
         videoId: youtube_id,
         playerVars: {controls: 0},
 
