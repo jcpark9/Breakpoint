@@ -29,7 +29,7 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
                 {{#if ytid}}
                     {{!-- <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" >  </iframe>  --}}
                      <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
-                    
+
                 {{else}}
                      <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
                 {{/if}}
@@ -71,7 +71,7 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
                             <div class="breakpoint-time">
                                 \{{bp.displayStartTime()}} - \{{bp.displayEndTime()}}
                             </div>
-                            <div class="breakpoint-name" contenteditable='true' ng-keydown="blurOnEnter($event)" ng-blur="breakpointNameUpdate($event, bp);" ng-dblclick>
+                            <div class="breakpoint-name" contenteditable='true' ng-keydown="blurOnEnter($event)" ng-blur="breakpointNameUpdate($event, bp);" ng-show="notMobile()">
                                 \{{bp.desc}}
                             </div>
                         </a>
