@@ -1253,21 +1253,28 @@ function onYouTubeIframeAPIReady() {
     console.log("onYouTubeIframeAPIReady");
     var player;
     var video = BreakPointVideo.getMainInstance();
-    player = new YT.Player('player-iframe', {
-        // height: BreakPointPlayer.VIDEO_HEIGHT,
-        // width: BreakPointPlayer.VIDEO_WIDTH,
-        videoId: 'moSFlvxnbgk',
-        // videoId: video.ytId,
-        playerVars: {controls: true },
-        // playerVars: {controls: BreakPointPlayer.CONTROLS },
-        events: {
-            // 'onReady': video.onPlayerReady,
-            // 'onStateChange': video.onPlayerStateChange
-            // 'onPlayerStateChange': function(){ console.log("change");}
-        }
-        });
+    // player = new YT.Player(video.elementId, {
+    //     height: BreakPointPlayer.VIDEO_HEIGHT,
+    //     width: BreakPointPlayer.VIDEO_WIDTH,
+    //     videoId: video.ytId,
+    //     playerVars: {controls: BreakPointPlayer.CONTROLS, },
+    //     events: {
+    //         'onReady': video.onPlayerReady,
+    //         'onStateChange': video.onPlayerStateChange
+    //         // 'onPlayerStateChange': function(){ console.log("change");}
+    //     }
+    //     });
     // player.breakPointVideo = video;
     // video.setPlayer(player);
     // video.onVideoLoaded();
     // video.renderOnPage();
+    player = new YT.Player('player-iframe', {
+      height: '390',
+      width: '640',
+      videoId: 'moSFlvxnbgk',
+      events: {
+        // 'onReady': onPlayerReady,
+        // 'onStateChange': onPlayerStateChange
+      }
+    });
 }
