@@ -910,7 +910,7 @@ var BreakPointVideo = new JS.Class({
         video.setPlayer(player);
         // video.onVideoLoaded(); 
         // video.renderOnPage();
-        // video.breakPointPlayer.videoFinishedLoading();
+        video.breakPointPlayer.videoFinishedLoading();
         // player.seekTo(13, true);
         
 
@@ -1277,7 +1277,7 @@ function onYouTubeIframeAPIReady() {
     // video.renderOnPage();
 
     player = new YT.Player('player-iframe', {
-        height: '390',
+        height: '390', // theres a min height on this
         width: '640',
         videoId: youtube_id,
         playerVars: {controls: 0},
