@@ -27,10 +27,13 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
             <div class="player-video-id" data-video-id="{{ytid}}"></div>
             <div class="iframe-wrapper">
                 {{#if ytid}}
-                    {{!-- <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" id="iframePlayer">  </iframe>  --}}
-                {{else}}
-                {{/if}}
+                    {{!-- <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" >  </iframe>  --}}
                      <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
+                    
+                {{else}}
+                     <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
+                {{/if}}
+                     {{!-- <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div>  --}}
                      <button class="kill-me"> KILL ME</button>
             </div>
             <div class="player-controls">
