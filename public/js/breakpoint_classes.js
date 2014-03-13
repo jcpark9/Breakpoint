@@ -133,10 +133,14 @@ var BreakPointPlayer = new JS.Class({
         CONTROLS: 0, // 0 for no default youtube controls, 1 for youtube controls
         AUTOPLAY: false,
 
-        LOCAL_VIDS: "some_key"
+        LOCAL_VIDS: "some_key",
 
         // ====== Class methods ====== //
+        
+        // for setting the dimensions beforehand
+        getDimensions: function(){
 
+        }
     },
 
     // ====== Instance Variables ==== ///
@@ -312,7 +316,6 @@ var BreakPointPlayer = new JS.Class({
         // $breakpoint.css('height',breakpointHeight);
 
     },
-
 
     renderBreakpointList: function(){
         this.$breakpointsUl.empty();
@@ -907,7 +910,7 @@ var BreakPointVideo = new JS.Class({
         video.setPlayer(player);
         // video.onVideoLoaded(); 
         // video.renderOnPage();
-        video.breakPointPlayer.videoFinishedLoading();
+        // video.breakPointPlayer.videoFinishedLoading();
         // player.seekTo(13, true);
         
 
