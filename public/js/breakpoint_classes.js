@@ -131,12 +131,16 @@ var BreakPointPlayer = new JS.Class({
         // USE_DEV_BREAKPOINTS: true,
 
         CONTROLS: 0, // 0 for no default youtube controls, 1 for youtube controls
-        AUTOPLAY: true,
+        AUTOPLAY: true, //necessary to load conrtols because of maxtime probs
 
-        LOCAL_VIDS: "some_key"
+        LOCAL_VIDS: "some_key",
 
         // ====== Class methods ====== //
+        
+        // for setting the dimensions beforehand
+        getDimensions: function(){
 
+        }
     },
 
     // ====== Instance Variables ==== ///
@@ -229,6 +233,9 @@ var BreakPointPlayer = new JS.Class({
     // ======== Html rendering and resizing ===== //
 
     fitToScreen: function(toFit) {
+        
+        // return;
+
         var stats = BreakPointPlayer;
 
         var totalHeight = toFit.height(); // todo refactor the menu height. how is that going to work>
@@ -275,7 +282,6 @@ var BreakPointPlayer = new JS.Class({
         var videoHeight = totalHeight - videoControlHeight;
         var videoWidth = totalWidth - sideNavWidth;
         
-        var $videoIframe = $('#player-iframe');
         var $videoControls = $('.player-controls');
         var $sideNav = $('.player-sidenav');
         var $playerMainSection = $('.player-main');
@@ -290,25 +296,35 @@ var BreakPointPlayer = new JS.Class({
         // console.log("videoControlHeight: " + videoControlHeight);
         // console.log("sideNavWidth: " + sideNavWidth);
 
-        $sideNav.width(sideNavWidth);
         $sideNav.height(totalHeight);
 
         $playerMainSection.width(videoWidth);
         $playerMainSection.height(totalHeight);
 
-        $videoIframe.width(videoWidth);
-        $videoIframe.height(videoHeight);
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            // var $videoIframe = $('.iframe-wrapper');
+
+            // $videoIframe.width(videoWidth);
+            // $videoIframe.height(videoHeight);
+        } else {
+            var $videoIframe = $('#player-iframe');
+
+            $videoIframe.width(videoWidth);
+            $videoIframe.height(videoHeight);
+
+            $sideNav.width(sideNavWidth);
+            $breakpointContainer.width(sideNavWidth);
+        }
         
         $videoControls.width(videoWidth);
         $videoControls.height(videoControlHeight);
 
-        $breakpointContainer.width(sideNavWidth);
         $breakpointContainer.height(totalHeight - stats.MENU_HEIGHT);
 
         // $breakpoint.css('height',breakpointHeight);
 
     },
-
 
     renderBreakpointList: function(){
         this.$breakpointsUl.empty();
@@ -837,7 +853,7 @@ var BreakPointVideo = new JS.Class({
         },
         loadYoutubeAPIScript: function(){
             var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
+            tag.src = "http://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         },
@@ -928,7 +944,7 @@ var BreakPointVideo = new JS.Class({
             } else {
             }
 
-            video.onVideoFirstPlay();
+            video.onVideoFirstPlay(); //sets up the controls
             video.firstPlay = true;
             // console.log("firstPlay");
         }
@@ -1253,19 +1269,38 @@ function onYouTubeIframeAPIReady() {
     console.log("onYouTubeIframeAPIReady");
     var player;
     var video = BreakPointVideo.getMainInstance();
-    player = new YT.Player(video.elementId, {
-        height: BreakPointPlayer.VIDEO_HEIGHT,
-        width: BreakPointPlayer.VIDEO_WIDTH,
-        videoId: video.ytId,
-        playerVars: {controls: BreakPointPlayer.CONTROLS, },
-        events: {
-            'onReady': video.onPlayerReady,
-            'onStateChange': video.onPlayerStateChange
-            // 'onPlayerStateChange': function(){ console.log("change");}
-        }
-        });
+    // player = new YT.Player(video.elementId, {
+    //     height: BreakPointPlayer.VIDEO_HEIGHT,
+    //     width: BreakPointPlayer.VIDEO_WIDTH,
+    //     videoId: video.ytId,
+    //     playerVars: {controls: BreakPointPlayer.CONTROLS, },
+    //     events: {
+    //         'onReady': video.onPlayerReady,
+    //         'onStateChange': video.onPlayerStateChange
+    //         // 'onPlayerStateChange': function(){ console.log("change");}
+    //     }
+    //     });
     // player.breakPointVideo = video;
     // video.setPlayer(player);
     // video.onVideoLoaded();
     // video.renderOnPage();
+
+    player = new YT.Player('player-iframe', {
+        // height: '390', // theres a min height on this
+        // width: '640',
+        height: '320',
+        width:'550',
+        videoId: video.ytId,
+
+        // videoId: youtube_id,
+        playerVars: {controls: 0},
+
+        events: {
+            'onReady': video.onPlayerReady,
+            'onStateChange': video.onPlayerStateChange
+
+        // 'onReady': onPlayerReady,
+        // 'onStateChange': onPlayerStateChange
+      }
+    });
 }

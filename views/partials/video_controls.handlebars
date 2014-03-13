@@ -9,25 +9,27 @@
     <a class="control-max-time"></a>
 </span>
 
-<span class="control-divider">|</span>
+<span class="control-divider" ng-show="playbackRateExists(.25)">|</span>
 
 <span class="button-group-with-label">
     <a href="" class="control-button playback-button" ng-show="playbackRateExists(.25)" ng-click="clickedPlaybackRate(.25)" ng-class="{active: playbackActive(.25)}">
-        .25x
+        {{!-- .25<span class="speed-x">x</span> --}}
+        1/4
     </a>
     <a href="" class="control-button playback-button" ng-show="playbackRateExists(.5)" ng-click="clickedPlaybackRate(.5)" ng-class="{active: playbackActive(.5)}">
-        .5x
+        {{!-- .5<span class="speed-x">x</span> --}}
+        1/2
     </a>
-    <span class="control-sub-label">
+    <span class="control-sub-label" ng-show="playbackRateExists(.25)">
         Speed
     </span>
 </span>
 
 
 
-<span class="control-divider">|</span>
+<span class="control-divider" ng-show="notMobile()">|</span>
 
-<span class="control-fine button-group-with-label">
+<span class="control-fine button-group-with-label" ng-show="notMobile()">
     <a href="" class="control-button" ng-click="clickedIncTime(-.1)">
         {{!-- <i class="fa fa-angle-double-left with-text"></i> --}}
         <span class="control-text">

@@ -8,18 +8,9 @@
     
 
 
-<!--  <script type="text/javascript" src="/js/swfobject.js"></script>    
-  <div id="ytapiplayer">
-    You need Flash player 8+ and JavaScript enabled to view this video.
-  </div>
 
-  <script type="text/javascript">
 
-    var params = { allowScriptAccess: "always" };
-    var atts = { id: "myytplayer" };
-    swfobject.embedSWF("http://www.youtube.com/v/moSFlvxnbgk?enablejsapi=1&playerapiid=ytplayer&version=3",
-                       "ytapiplayer", "425", "356", "8", null, null, params, atts);
-  </script> -->
+
 
 
 <!-- http://stackoverflow.com/questions/19603618/how-do-i-get-the-reference-to-an-existing-youtube-player
@@ -32,20 +23,23 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
     <!-- <div class="" id="" >  -->
 
     <div class="" id="player" ng-controller="BreakPointCtrl" >
-        <div class="player-main">
+        <div class="player-main animclass">
             <div class="player-video-id" data-video-id="{{ytid}}"></div>
             <div class="iframe-wrapper">
                 {{#if ytid}}
-                    <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" id="iframePlayer">  </iframe> 
+                    {{!-- <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" >  </iframe>  --}}
+                     <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
+
                 {{else}}
                      <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
                 {{/if}}
+                     {{!-- <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div>  --}}
             </div>
             <div class="player-controls">
                 <div class="slider-breakpoints" ng-model='breakpoints'>
                     <span class="slider-breakpoint" data-bp-id="\{{sbp.breakPointId}}" ng-repeat="sbp in breakpoints" style="left:\{{sliderBreakpointLeft(sbp)}}%" ng-click="clickedSliderBreakpoint(sbp)" ng-mouseenter="addSegmentDisplayBreakpoint(sbp)" ng-mouseleave="removeSegmentDisplayBreakpoint(sbp)">
                         {{!-- <i class='fa fa-tint fa-flip-vertical slider-breakpoint-icon' ng-class="{active: isCurrentBreakpoint(sbp)}"></i> --}}
-                        <img src="/images/\{{sliderBreakpointSrc(sbp)}}" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" >
+                        <img ng-src="/images/\{{sliderBreakpointSrc(sbp)}}" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" >
                         {{!-- <img src="/images/break_white.png" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" > --}}
                     </span>
                 </div>
@@ -77,7 +71,7 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
                             <div class="breakpoint-time">
                                 \{{bp.displayStartTime()}} - \{{bp.displayEndTime()}}
                             </div>
-                            <div class="breakpoint-name" contenteditable='true' ng-keydown="blurOnEnter($event)" ng-blur="breakpointNameUpdate($event, bp);" ng-dblclick>
+                            <div class="breakpoint-name" contenteditable='true' ng-keydown="blurOnEnter($event)" ng-blur="breakpointNameUpdate($event, bp);" ng-show="notMobile()">
                                 \{{bp.desc}}
                             </div>
                         </a>
@@ -102,10 +96,12 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
     {{#if video}}
         var videoDBID = "{{{video._id}}}";
         var videoDB = {{{json video}}};
+        var youtube_id = "{{{ytid}}}";
     {{else}}
         var videoDBID = undefined;
         var videoDB = undefined;
     {{/if}}
+
 
     </script>
 

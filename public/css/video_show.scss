@@ -49,7 +49,7 @@ $css-mobile-breakpoint: 600px;
 $SMARTPHONE_HEIGHT: 480px; //in portrait orientation
 $SMARTPHONE_WIDTH: 320px; // also in portrait orientation
 
-$VIDEO_WIDTH: 350px;
+$VIDEO_WIDTH: 395px;
 $VIDEO_HEIGHT: 270px;
 
 // this logic is useful and can end up in the js
@@ -104,6 +104,10 @@ $BREAKPOINT_HEIGHT: 45px;
     width:$SMARTPHONE_HEIGHT;
     height: $SMARTPHONE_WIDTH;
     background: black;
+}
+
+.animClass {
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 #player{
@@ -309,6 +313,14 @@ $BREAKPOINT_HEIGHT: 45px;
     .control-button.playback-button{
         // font-size: 11px;
         // font-size:1.1em;
+        @include responsive-font-size(15px, 12px);
+
+        position: relative;
+    }
+
+    .speed-x{
+        @include responsive-font-size(.9em, .9em);
+
     }
 
     .control-time{
@@ -364,12 +376,14 @@ $BREAKPOINT_HEIGHT: 45px;
     .control-sub-label{
         position: absolute;
         display: inline-block;
-        bottom: -2px;
         text-align: center;
         @media screen and (min-width: $css-mobile-breakpoint){
             padding-left: 2em;
             font-size: 11px;   
+            bottom:-2px;
+
         }
+        bottom: -2px;
         padding-left:1.2em;
         font-size: 9px;
          
@@ -392,9 +406,10 @@ $BREAKPOINT_HEIGHT: 45px;
         color:#999999;
     }
 
-    .player-iframe{
-        width: $VIDEO_WIDTH;
-        height: $VIDEO_HEIGHT;
+    .player-iframe{ // DOES NOT WORK. WILL BREAK SCREEN ON ANDRIODS
+
+        // width: $VIDEO_WIDTH;
+        // height: $VIDEO_HEIGHT;
     }
 
     //  ----- Side nav ---------- //

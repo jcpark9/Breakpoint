@@ -3,6 +3,7 @@
 console.log('video_show.js');
 
 var bpPlayer; // GLOBAL MUAHHAHAHA
+//keyboard controls
 
 var app = angular.module("BreakPoint", []);
 
@@ -39,6 +40,18 @@ var BreakPointCtrl = function($scope, $timeout) {
             // console.log("setting breakpoints");
             // console.log("finished setting breakpoints");
         }
+    }
+
+    function isMobile(){
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    $scope.notMobile = function(){
+        return !isMobile();
     }
 
     $scope.logBreakPoints = function(){
