@@ -844,7 +844,7 @@ var BreakPointVideo = new JS.Class({
         },
         loadYoutubeAPIScript: function(){
             var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
+            tag.src = "http://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         },
@@ -1279,7 +1279,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player-iframe', {
         // height: '390', // theres a min height on this
         // width: '640',
-        height: '290',
+        height: '350',
         width:'640',
         videoId: youtube_id,
         playerVars: {controls: 0},
