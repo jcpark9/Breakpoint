@@ -131,7 +131,7 @@ var BreakPointPlayer = new JS.Class({
         // USE_DEV_BREAKPOINTS: true,
 
         CONTROLS: 0, // 0 for no default youtube controls, 1 for youtube controls
-        AUTOPLAY: false,
+        AUTOPLAY: false, //necessary to load conrtols because of maxtime probs
 
         LOCAL_VIDS: "some_key",
 
@@ -211,9 +211,9 @@ var BreakPointPlayer = new JS.Class({
         this.fitToScreen($(window));
         this.fitToScreen($(window));
 
-        // if (BreakPointPlayer.AUTOPLAY){
-        //     this.video.playVideo();
-        // }
+        if (BreakPointPlayer.AUTOPLAY){
+            this.video.playVideo();
+        }
 
     },
 
@@ -1288,7 +1288,7 @@ function onYouTubeIframeAPIReady() {
         // height: '390', // theres a min height on this
         // width: '640',
         height: '350',
-        width:'520',
+        width:'530',
         videoId: video.ytId,
 
         // videoId: youtube_id,
