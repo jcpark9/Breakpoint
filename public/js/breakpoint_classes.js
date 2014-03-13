@@ -903,7 +903,7 @@ var BreakPointVideo = new JS.Class({
         video.setPlayer(player);
         // video.onVideoLoaded(); 
         // video.renderOnPage();
-        video.breakPointPlayer.videoFinishedLoading();
+        // video.breakPointPlayer.videoFinishedLoading();
         // player.seekTo(13, true);
         
 
