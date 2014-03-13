@@ -296,7 +296,6 @@ var BreakPointPlayer = new JS.Class({
         // console.log("videoControlHeight: " + videoControlHeight);
         // console.log("sideNavWidth: " + sideNavWidth);
 
-        $sideNav.width(sideNavWidth);
         $sideNav.height(totalHeight);
 
         $playerMainSection.width(videoWidth);
@@ -313,12 +312,14 @@ var BreakPointPlayer = new JS.Class({
 
             $videoIframe.width(videoWidth);
             $videoIframe.height(videoHeight);
+
+            $sideNav.width(sideNavWidth);
+            $breakpointContainer.width(sideNavWidth);
         }
         
         $videoControls.width(videoWidth);
         $videoControls.height(videoControlHeight);
 
-        $breakpointContainer.width(sideNavWidth);
         $breakpointContainer.height(totalHeight - stats.MENU_HEIGHT);
 
         // $breakpoint.css('height',breakpointHeight);
