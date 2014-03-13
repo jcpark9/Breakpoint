@@ -48,7 +48,7 @@
 #player {
   position: relative; }
   #player .player-main {
-    width: 400px;
+    width: 395px;
     height: 320px;
     display: inline-block;
     position: absolute; }
@@ -228,7 +228,7 @@
       #player .control-helper {
         font-size: 12px; } }
   #player .player-sidenav {
-    width: 80px;
+    width: 85px;
     height: 320px;
     background: #252525;
     position: absolute;
@@ -257,7 +257,7 @@
     display: block;
     overflow-y: auto;
     height: 290px;
-    width: 80px; }
+    width: 85px; }
 
 .breakpoints-ul {
   color: white;

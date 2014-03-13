@@ -42,6 +42,14 @@ var BreakPointCtrl = function($scope, $timeout) {
         }
     }
 
+    function isMobile(){
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     $scope.logBreakPoints = function(){
         console.log("CLICKED");
         console.log($scope.breakpoints.toString());
