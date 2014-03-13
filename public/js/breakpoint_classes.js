@@ -943,7 +943,7 @@ var BreakPointVideo = new JS.Class({
             } else {
             }
 
-            video.onVideoFirstPlay();
+            video.onVideoFirstPlay(); //sets up the controls
             video.firstPlay = true;
             // console.log("firstPlay");
         }
@@ -1289,7 +1289,9 @@ function onYouTubeIframeAPIReady() {
         // width: '640',
         height: '350',
         width:'550',
-        videoId: youtube_id,
+        videoId: video.ytId,
+        
+        // videoId: youtube_id,
         playerVars: {controls: 0},
 
         events: {
