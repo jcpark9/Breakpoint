@@ -406,9 +406,9 @@ $BREAKPOINT_HEIGHT: 45px;
         color:#999999;
     }
 
-    .player-iframe{
-        width: $VIDEO_WIDTH;
-        height: $VIDEO_HEIGHT;
+    .player-iframe{ // DOES NOT WORK. WILL BREAK SCREEN ON ANDRIODS
+        // width: $VIDEO_WIDTH;
+        // height: $VIDEO_HEIGHT;
     }
 
     //  ----- Side nav ---------- //

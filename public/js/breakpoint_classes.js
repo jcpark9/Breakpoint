@@ -229,6 +229,10 @@ var BreakPointPlayer = new JS.Class({
     // ======== Html rendering and resizing ===== //
 
     fitToScreen: function(toFit) {
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            return;
+        }
+
         var stats = BreakPointPlayer;
 
         var totalHeight = toFit.height(); // todo refactor the menu height. how is that going to work>
@@ -903,7 +907,7 @@ var BreakPointVideo = new JS.Class({
         video.setPlayer(player);
         // video.onVideoLoaded(); 
         // video.renderOnPage();
-        // video.breakPointPlayer.videoFinishedLoading();
+        video.breakPointPlayer.videoFinishedLoading();
         // player.seekTo(13, true);
         
 
@@ -1270,8 +1274,8 @@ function onYouTubeIframeAPIReady() {
     // video.renderOnPage();
 
     player = new YT.Player('player-iframe', {
-        height: '390',
-        width: '640',
+        height: '270',
+        width: '350',
         videoId: youtube_id,
         playerVars: {controls: 0},
 
