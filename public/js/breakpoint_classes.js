@@ -1260,8 +1260,8 @@ function onYouTubeIframeAPIReady() {
         // videoId: video.ytId,
         playerVars: {controls: BreakPointPlayer.CONTROLS, },
         events: {
-            'onReady': video.onPlayerReady,
-            'onStateChange': video.onPlayerStateChange
+            // 'onReady': video.onPlayerReady,
+            // 'onStateChange': video.onPlayerStateChange
             // 'onPlayerStateChange': function(){ console.log("change");}
         }
         });
