@@ -1268,10 +1268,16 @@ function onYouTubeIframeAPIReady() {
     // video.setPlayer(player);
     // video.onVideoLoaded();
     // video.renderOnPage();
+
+
+
+
     player = new YT.Player('player-iframe', {
       height: '390',
       width: '640',
       videoId: youtube_id,
+      playerVars: {controls: 0},
+
       events: {
         // 'onReady': onPlayerReady,
         // 'onStateChange': onPlayerStateChange
