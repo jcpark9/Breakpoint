@@ -304,10 +304,10 @@ var BreakPointPlayer = new JS.Class({
 
 
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            var $videoIframe = $('.iframe-wrapper');
+            // var $videoIframe = $('.iframe-wrapper');
 
-            $videoIframe.width(videoWidth);
-            $videoIframe.height(videoHeight);
+            // $videoIframe.width(videoWidth);
+            // $videoIframe.height(videoHeight);
         } else {
             var $videoIframe = $('#player-iframe');
 
