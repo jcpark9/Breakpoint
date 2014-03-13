@@ -309,6 +309,14 @@ $BREAKPOINT_HEIGHT: 45px;
     .control-button.playback-button{
         // font-size: 11px;
         // font-size:1.1em;
+        @include responsive-font-size(15px, 12px);
+
+        position: relative;
+    }
+
+    .speed-x{
+        @include responsive-font-size(.9em, .9em);
+
     }
 
     .control-time{
@@ -364,12 +372,14 @@ $BREAKPOINT_HEIGHT: 45px;
     .control-sub-label{
         position: absolute;
         display: inline-block;
-        bottom: -2px;
         text-align: center;
         @media screen and (min-width: $css-mobile-breakpoint){
             padding-left: 2em;
             font-size: 11px;   
+            bottom:-2px;
+
         }
+        bottom: -2px;
         padding-left:1.2em;
         font-size: 9px;
          

@@ -153,6 +153,17 @@
         font-size: 1.5em; } }
     #player .control-pauseplay.active {
       color: #ffffff; }
+  #player .control-button.playback-button {
+    font-size: 12px;
+    position: relative; }
+    @media screen and (min-width: 600px) {
+      #player .control-button.playback-button {
+        font-size: 15px; } }
+  #player .speed-x {
+    font-size: 0.9em; }
+    @media screen and (min-width: 600px) {
+      #player .speed-x {
+        font-size: 0.9em; } }
   #player .control-time {
     padding: 0 8px;
     font-size: 10px; }
@@ -191,14 +202,15 @@
   #player .control-sub-label {
     position: absolute;
     display: inline-block;
-    bottom: -2px;
     text-align: center;
+    bottom: -2px;
     padding-left: 1.2em;
     font-size: 9px; }
     @media screen and (min-width: 600px) {
       #player .control-sub-label {
         padding-left: 2em;
-        font-size: 11px; } }
+        font-size: 11px;
+        bottom: -2px; } }
   #player .breakpoint-related-controls {
     position: absolute;
     right: 10px; }

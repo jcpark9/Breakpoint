@@ -35,17 +35,17 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
         <div class="player-main">
             <div class="player-video-id" data-video-id="{{ytid}}"></div>
             <div class="iframe-wrapper">
-                {{#if ytid}}
-                    <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" id="iframePlayer">  </iframe> 
-                {{else}}
+                {{!-- {{#if ytid}} --}}
+                    {{!-- <iframe id="player-iframe" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{ytid}}?enablejsapi=1&version=3&controls=0" allowfullscreen frameborder="0" id="iframePlayer">  </iframe>  --}}
+                {{!-- {{else}} --}}
                      <div class="player-iframe" id="player-iframe">     Video loading! Sit tight</div> 
-                {{/if}}
+                {{!-- {{/if}} --}}
             </div>
             <div class="player-controls">
                 <div class="slider-breakpoints" ng-model='breakpoints'>
                     <span class="slider-breakpoint" data-bp-id="\{{sbp.breakPointId}}" ng-repeat="sbp in breakpoints" style="left:\{{sliderBreakpointLeft(sbp)}}%" ng-click="clickedSliderBreakpoint(sbp)" ng-mouseenter="addSegmentDisplayBreakpoint(sbp)" ng-mouseleave="removeSegmentDisplayBreakpoint(sbp)">
                         {{!-- <i class='fa fa-tint fa-flip-vertical slider-breakpoint-icon' ng-class="{active: isCurrentBreakpoint(sbp)}"></i> --}}
-                        <img src="/images/\{{sliderBreakpointSrc(sbp)}}" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" >
+                        <img ng-src="/images/\{{sliderBreakpointSrc(sbp)}}" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" >
                         {{!-- <img src="/images/break_white.png" class="slider-breakpoint-icon" ng-class="{active: isCurrentBreakpoint(sbp)}" > --}}
                     </span>
                 </div>
@@ -102,6 +102,7 @@ http://stackoverflow.com/questions/7988476/listening-for-youtube-event-in-javasc
     {{#if video}}
         var videoDBID = "{{{video._id}}}";
         var videoDB = {{{json video}}};
+        var youtube_id = "{{{ytid}}}";
     {{else}}
         var videoDBID = undefined;
         var videoDB = undefined;

@@ -3,6 +3,7 @@
 console.log('video_show.js');
 
 var bpPlayer; // GLOBAL MUAHHAHAHA
+//keyboard controls
 
 var app = angular.module("BreakPoint", []);
 
