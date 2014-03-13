@@ -42,28 +42,28 @@
   height: 320px;
   background: black; }
 
-#player {
+#controller {
   position: relative; }
-  #player .player-main {
+  #controller .player-main {
     width: 350px;
     height: 320px;
     display: inline-block;
     position: absolute; }
-  #player .player-controls {
+  #controller .player-controls {
     position: relative;
     width: 100%; }
-  #player .player-slider {
+  #controller .player-slider {
     width: 100%; }
-  #player .main-slider {
+  #controller .main-slider {
     cursor: pointer;
     width: 100%;
     background: #777777;
     height: 10px;
     position: relative; }
-  #player .filled-slider {
+  #controller .filled-slider {
     height: 100%;
     background: #800000; }
-  #player .current-breakpoint-slider {
+  #controller .current-breakpoint-slider {
     background: rgba(0, 200, 0, 0.5);
     height: 100%;
     position: absolute;
@@ -73,7 +73,7 @@
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     z-index: 3; }
-  #player .slider-breakpoint {
+  #controller .slider-breakpoint {
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
@@ -83,123 +83,123 @@
     left: 0;
     top: -15px;
     z-index: 4; }
-  #player .slider-breakpoint-img.active, #player .slider-breakpoint-img:hover {
+  #controller .slider-breakpoint-img.active, #controller .slider-breakpoint-img:hover {
     border: solid 2px #ff0000;
     top: -2px;
     left: -2px; }
-  #player .slider-breakpoint-img {
+  #controller .slider-breakpoint-img {
     height: 20px;
     width: 20px;
     vertical-align: top; }
-  #player .slider-breakpoint-icon.active {
+  #controller .slider-breakpoint-icon.active {
     color: #2920f5; }
-  #player .slider-breakpoint-icon {
+  #controller .slider-breakpoint-icon {
     cursor: pointer;
     height: 12px;
     color: #eeeeee; }
     @media screen and (min-width: 600px) {
-      #player .slider-breakpoint-icon {
+      #controller .slider-breakpoint-icon {
         height: 16px; } }
-    #player .slider-breakpoint-icon:active {
+    #controller .slider-breakpoint-icon:active {
       color: #0000ff; }
-    #player .slider-breakpoint-icon:hover {
+    #controller .slider-breakpoint-icon:hover {
       color: #000080; }
-    #player .slider-breakpoint-icon.to-remove {
+    #controller .slider-breakpoint-icon.to-remove {
       color: #ff0000; }
-  #player .control-buttons {
+  #controller .control-buttons {
     padding-left: 5px;
     position: relative; }
-  #player .control-button {
+  #controller .control-button {
     font-size: 0.85em;
     display: inline-block;
     padding: 6px 2px; }
     @media screen and (min-width: 600px) {
-      #player .control-button {
+      #controller .control-button {
         font-size: 1.2em; } }
     @media screen and (min-width: 600px) {
-      #player .control-button {
+      #controller .control-button {
         padding: 10px 5px; } }
-  #player .control-button .fa {
+  #controller .control-button .fa {
     cursor: pointer;
     color: #999999; }
-    #player .control-button .fa:hover {
+    #controller .control-button .fa:hover {
       color: #0080ff; }
-    #player .control-button .fa:active {
+    #controller .control-button .fa:active {
       color: #0000ff; }
-  #player .control-button-with-text {
+  #controller .control-button-with-text {
     padding-top: 4px;
     padding-left: 2px;
     padding-right: 2px; }
-  #player .control-text {
+  #controller .control-text {
     color: #999999;
     font-size: 10px; }
     @media screen and (min-width: 600px) {
-      #player .control-text {
+      #controller .control-text {
         font-size: 15px; } }
-    #player .control-text:hover {
+    #controller .control-text:hover {
       color: #0080ff; }
-    #player .control-text:active {
+    #controller .control-text:active {
       color: #0000ff; }
-  #player .control-repeat.active {
+  #controller .control-repeat.active {
     color: #0000ff; }
-  #player .control-button.playback-button {
+  #controller .control-button.playback-button {
     color: #4c4c4c; }
-    #player .control-button.playback-button.active {
+    #controller .control-button.playback-button.active {
       color: #0000ee; }
-  #player .control-pauseplay {
+  #controller .control-pauseplay {
     font-size: 1.3em; }
     @media screen and (min-width: 600px) {
-      #player .control-pauseplay {
+      #controller .control-pauseplay {
         font-size: 1.5em; } }
-    #player .control-pauseplay.active {
+    #controller .control-pauseplay.active {
       color: #ffffff; }
-  #player .control-button.playback-button {
+  #controller .control-button.playback-button {
     font-size: 12px;
     position: relative; }
     @media screen and (min-width: 600px) {
-      #player .control-button.playback-button {
+      #controller .control-button.playback-button {
         font-size: 15px; } }
-  #player .speed-x {
+  #controller .speed-x {
     font-size: 0.9em; }
     @media screen and (min-width: 600px) {
-      #player .speed-x {
+      #controller .speed-x {
         font-size: 0.9em; } }
-  #player .control-time {
+  #controller .control-time {
     padding: 0 8px;
     font-size: 10px; }
     @media screen and (min-width: 600px) {
-      #player .control-time {
+      #controller .control-time {
         font-size: 11px; } }
-  #player .control-max-time {
+  #controller .control-max-time {
     color: #999999; }
-  #player .control-current-time {
+  #controller .control-current-time {
     color: #dddddd; }
-  #player .control-sound, #player .control-nosound {
+  #controller .control-sound, #controller .control-nosound {
     font-size: 0.8em; }
     @media screen and (min-width: 600px) {
-      #player .control-sound, #player .control-nosound {
+      #controller .control-sound, #controller .control-nosound {
         font-size: 1em; } }
-  #player .hidden {
+  #controller .hidden {
     opacity: 0; }
-  #player .fa.with-text {
+  #controller .fa.with-text {
     font-size: 0.9em;
     text-align: center;
     display: block;
     position: relative;
     top: 7px; }
     @media screen and (min-width: 600px) {
-      #player .fa.with-text {
+      #controller .fa.with-text {
         font-size: 1em; } }
-  #player .control-divider {
+  #controller .control-divider {
     font-size: 1em;
     color: #2e2e2e; }
     @media screen and (min-width: 600px) {
-      #player .control-divider {
+      #controller .control-divider {
         font-size: 1.2em; } }
-  #player .button-group-with-label {
+  #controller .button-group-with-label {
     position: relative;
     display: inline-block; }
-  #player .control-sub-label {
+  #controller .control-sub-label {
     position: absolute;
     display: inline-block;
     text-align: center;
@@ -207,14 +207,14 @@
     padding-left: 1.2em;
     font-size: 9px; }
     @media screen and (min-width: 600px) {
-      #player .control-sub-label {
+      #controller .control-sub-label {
         padding-left: 2em;
         font-size: 11px;
         bottom: -2px; } }
-  #player .breakpoint-related-controls {
+  #controller .breakpoint-related-controls {
     position: absolute;
     right: 10px; }
-  #player .control-helper {
+  #controller .control-helper {
     top: 7px;
     position: relative;
     font-size: 10px;
@@ -222,12 +222,12 @@
     text-align: center;
     color: #999999; }
     @media screen and (min-width: 600px) {
-      #player .control-helper {
+      #controller .control-helper {
         font-size: 12px; } }
-  #player .player-iframe {
+  #controller .player-iframe {
     width: 350px;
     height: 270px; }
-  #player .player-sidenav {
+  #controller .player-sidenav {
     width: 130px;
     height: 320px;
     background: #252525;
@@ -235,7 +235,7 @@
     top: 0;
     right: 0;
     z-index: 5; }
-  #player .player-menu {
+  #controller .player-menu {
     height: 30px;
     color: #cccccc;
     text-align: center;
@@ -253,7 +253,7 @@
     /* IE10+ */
     background: linear-gradient(45deg, #cc0099 0%, #ff0033 80%);
     /* W3C */ }
-  #player .player-breakpoints {
+  #controller .player-breakpoints {
     display: block;
     overflow-y: auto;
     height: 290px;
