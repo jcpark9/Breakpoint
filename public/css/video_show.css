@@ -227,6 +227,9 @@
     @media screen and (min-width: 600px) {
       #player .control-helper {
         font-size: 12px; } }
+  #player .player-iframe {
+    width: 350px;
+    height: 270px; }
   #player .player-sidenav {
     width: 130px;
     height: 320px;
