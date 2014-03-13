@@ -1288,7 +1288,7 @@ function onYouTubeIframeAPIReady() {
         // height: '390', // theres a min height on this
         // width: '640',
         height: '350',
-        width:'530',
+        width:'540',
         videoId: video.ytId,
 
         // videoId: youtube_id,
