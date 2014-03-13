@@ -233,9 +233,8 @@ var BreakPointPlayer = new JS.Class({
     // ======== Html rendering and resizing ===== //
 
     fitToScreen: function(toFit) {
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            return;
-        }
+        
+        // return;
 
         var stats = BreakPointPlayer;
 
@@ -283,7 +282,6 @@ var BreakPointPlayer = new JS.Class({
         var videoHeight = totalHeight - videoControlHeight;
         var videoWidth = totalWidth - sideNavWidth;
         
-        var $videoIframe = $('#player-iframe');
         var $videoControls = $('.player-controls');
         var $sideNav = $('.player-sidenav');
         var $playerMainSection = $('.player-main');
@@ -304,8 +302,18 @@ var BreakPointPlayer = new JS.Class({
         $playerMainSection.width(videoWidth);
         $playerMainSection.height(totalHeight);
 
-        $videoIframe.width(videoWidth);
-        $videoIframe.height(videoHeight);
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            var $videoIframe = $('.iframe-wrapper');
+
+            $videoIframe.width(videoWidth);
+            $videoIframe.height(videoHeight);
+        } else {
+            var $videoIframe = $('#player-iframe');
+
+            $videoIframe.width(videoWidth);
+            $videoIframe.height(videoHeight);
+        }
         
         $videoControls.width(videoWidth);
         $videoControls.height(videoControlHeight);
