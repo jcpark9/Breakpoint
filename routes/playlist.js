@@ -29,7 +29,6 @@ exports.view = function(req, res){
 
 	Setlist.find({}, function (err, setlists) {
 		data.setlists = setlists;
-		console.log(data.setlists);
 
 		Video.find({}, function (err, videos) {
 			data.videos = videos;

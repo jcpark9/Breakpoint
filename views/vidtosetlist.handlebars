@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Breakpoint</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href="/css/application.css" rel="stylesheet">
+	<link href="/css/vidtosetlist.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="row menubar">
+		<a href="/setlist/{{setlistId}}" id="back"><div class="col-xs-2"><span class="helper"></span><span class="glyphicon glyphicon-chevron-left"></span></div></a>
+		<a href="/"><div class="col-xs-8"><span class="helper"></span><img src="/images/logowhite.png"/></div></a>
+		<div class="col-xs-2"></div>
+	</div>
+	
+	<a name="top"></a>
+	<div id="add"> <span class="glyphicon glyphicon glyphicon-plus-sign"></span> ADD</div>
+
+	<div class="container">
+		<div class="pagetitle">ADD  <br/>  <span class="setlisttitle"> {{video.title}} </span> <br/> TO A SETLIST </div>
+		<div class="guide" id="instruction"> Which setlist do you wanna add to? <br/></div>
+		{{#each setlists}}
+			<div class="listitem">
+				<div class="block"><input type="radio" name="setlist" value="{{_id}}"><div class="folded title">{{title}}</div></div>
+				<div class="list">
+					<div class="description"> {{description}} </div>
+				</div>
+			</div>
+		{{/each}}
+		{{#if noVideo}}
+		<div id='novidfound' class='guide'>No Setlist found</div>
+		{{/if}}
+	</div>
+
+	{{>warning}}
+	{{>notification}}
+	<a href="#top"><div id="gobacktop"> GO BACK TO TOP <span class="glyphicon glyphicon-arrow-up"></span></div></a>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/vidtosetlist.js"></script>
+</body>
+</html>
