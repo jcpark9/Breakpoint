@@ -1286,6 +1286,7 @@ function onYouTubeIframeAPIReady() {
 
         events: {
             'onReady': video.onPlayerReady,
+            'onStateChange': video.onPlayerStateChange
 
         // 'onReady': onPlayerReady,
         // 'onStateChange': onPlayerStateChange
