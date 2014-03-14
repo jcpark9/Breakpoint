@@ -18,9 +18,6 @@ mongoose.model('Setlist', require('./models/setlist').Setlist, "setlists");
 Video = mongoose.model('Video');
 Setlist = mongoose.model('Setlist');
 
-/* Remove content */
-mongoose.connection.collections['videos'].drop();
-mongoose.connection.collections['setlists'].drop();
 
 /* Repopulate with seed */
 var videoseed = require('./videoseed.json');
